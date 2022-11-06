@@ -18,3 +18,8 @@
 
 // Урок 4. Добавляем  фрагменты для окна Чатов и Настроек.
 // https://www.youtube.com/watch?v=DZkU4yhBwVI&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=63
+
+// Урок 5. Проведем рефакторинг кода. Вынесем все управления Material Navigation Drawer в отдельный 
+//         класс AppDrawer. Создадим общий базовый фрагмент для всех фрагментов приложения, 
+//         используем наследование, зададим общее поведение всех фрагментов. 
+// https://www.youtube.com/watch?v=YlsovHtpY_c&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=62
