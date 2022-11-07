@@ -38,6 +38,8 @@ android {
 }
 
 dependencies {
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    //noinspection GradleDependency
     implementation "com.mikepenz:materialdrawer:7.0.0"
 
 // Required support lib modules
@@ -46,6 +48,7 @@ dependencies {
 
 
 // Add for NavController support
+    //noinspection GradleDependency
     implementation "com.mikepenz:materialdrawer-nav:7.0.0"
 // Add for Android-Iconics support
 //    implementation "com.mikepenz:materialdrawer-iconics:7.0.0"
