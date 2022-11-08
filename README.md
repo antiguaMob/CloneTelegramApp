@@ -25,6 +25,6 @@
 //         используем наследование, зададим общее поведение всех фрагментов. 
 // https://www.youtube.com/watch?v=YlsovHtpY_c&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=62
 
-// Урок 5. Заполним элементами view фрагмент настроек. Научимся работать с редактором макетов
+// Урок 6. Заполним элементами view фрагмент настроек. Научимся работать с редактором макетов
 //         Android Studio и ConstraintLayout.
 //https://www.youtube.com/watch?v=B_GznW5F9po&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=63
