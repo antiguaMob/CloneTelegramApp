@@ -9,7 +9,7 @@
 
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorOnPrimary">@color/colorAccent</item>
-
+        <item name="popupTheme">@style/actionMenu</item>
         <item name="android:colorBackground">@color/white</item>
 
         <!-- Secondary brand color. -->
