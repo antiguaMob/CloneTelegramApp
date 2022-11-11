@@ -36,3 +36,7 @@
 //Урок 8. Создаем окно регистрации по номеру телефона. Два фрагмента и одно actvity для
 //        регистрации и авторизации пользователя. 
 // https://www.youtube.com/watch?v=x_kVlYdmk9Q&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=60
+
+//Урок 9. Рефакторинг кода. Научимся улучшать классы из стандартной библиотеки, принимать лямбды
+//        и возвращать результат.
+// https://www.youtube.com/watch?v=kaXyxHY9pWk&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=58

@@ -8,6 +8,8 @@ import com.antigua.mytelegram.activities.RegisterActivity
 import com.antigua.mytelegram.databinding.ActivityMainBinding
 import com.antigua.mytelegram.ui.fragments.ChatsFragment
 import com.antigua.mytelegram.ui.objects.AppDrawer
+import com.antigua.mytelegram.utilits.replaceActivity
+import com.antigua.mytelegram.utilits.replaceFragment
 
 private lateinit var mBinding: ActivityMainBinding
     private lateinit var mAppDrawer: AppDrawer
@@ -31,13 +33,10 @@ class MainActivity : AppCompatActivity() {
         if(false){
             setSupportActionBar(mToolbar)
             mAppDrawer.create()
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.dataContainer, ChatsFragment()).commit()
+            replaceFragment(ChatsFragment())
         } else {
-            val intent = Intent(this,RegisterActivity::class.java)
-            startActivity(intent)
+            replaceActivity(RegisterActivity())
         }
-
     }
 
 

@@ -4,7 +4,7 @@ import android.view.Menu
 import android.view.MenuInflater
 import com.antigua.mytelegram.R
 
-class SettingsFragment :  BaseFragment<Any?>(R.layout.fragment_settings) {
+class SettingsFragment :  BaseFragment(R.layout.fragment_settings) {
 
     override fun onResume() {
         super.onResume()
