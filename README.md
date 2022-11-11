@@ -32,3 +32,7 @@
 // Урок 7. Добавим Options menu с иконками, закончим с фрагментом настроек, добавим выпадающее
 //         меню с иконками. 
 // https://www.youtube.com/watch?v=LjEn7JciNJo&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=61
+
+//Урок 8. Создаем окно регистрации по номеру телефона. Два фрагмента и одно actvity для
+//        регистрации и авторизации пользователя. 
+// https://www.youtube.com/watch?v=x_kVlYdmk9Q&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=60
