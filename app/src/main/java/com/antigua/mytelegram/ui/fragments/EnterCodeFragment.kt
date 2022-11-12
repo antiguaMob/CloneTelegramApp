@@ -1,6 +1,5 @@
 package com.antigua.mytelegram.ui.fragments
 
-import android.util.Log
 import com.antigua.mytelegram.MainActivity
 import com.antigua.mytelegram.R
 import com.antigua.mytelegram.activities.RegisterActivity
