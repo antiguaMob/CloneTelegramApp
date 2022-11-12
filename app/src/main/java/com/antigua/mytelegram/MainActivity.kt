@@ -11,15 +11,16 @@ import com.antigua.mytelegram.utilits.AUTH
 import com.antigua.mytelegram.utilits.initFirebase
 import com.antigua.mytelegram.utilits.replaceActivity
 import com.antigua.mytelegram.utilits.replaceFragment
-import com.google.firebase.auth.FirebaseAuth
 
-private lateinit var mBinding: ActivityMainBinding
-private lateinit var mAppDrawer: AppDrawer
-private lateinit var mToolbar: Toolbar
 
 
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var mBinding: ActivityMainBinding
+    lateinit var mAppDrawer: AppDrawer
+    private lateinit var mToolbar: Toolbar
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding = ActivityMainBinding.inflate(layoutInflater)

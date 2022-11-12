@@ -52,3 +52,18 @@
 //Урок 12. Начнем работать с базой данных Firebase. Добавим все необходимые зависимости для работы
 //         с Realtime Database. Создадим первые ноды при создании пользователя.
 // https://www.youtube.com/watch?v=5Gir79boRbM&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=55
+
+//Урок 13. Добавим поведение выдвижного меню как в оригинальном телеграмме. Блокируем выдвижное 
+//         меню, переопределяем поведение гамбургера и кнопки назад.
+// https://www.youtube.com/watch?v=AqnVLDTjc94&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=54
+
+//Урок 14. Добавим возможность изменять имя и фамилию пользователя, а так же добавим модель User.
+//         Запишем изменённые данные в удаленную базу данных Firebase.
+//https://www.youtube.com/watch?v=RiwwfW77TWw&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=53
+
+
+
+
+
+
+
