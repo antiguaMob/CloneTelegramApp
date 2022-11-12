@@ -1,6 +1,5 @@
 package com.antigua.mytelegram
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
@@ -8,12 +7,15 @@ import com.antigua.mytelegram.activities.RegisterActivity
 import com.antigua.mytelegram.databinding.ActivityMainBinding
 import com.antigua.mytelegram.ui.fragments.ChatsFragment
 import com.antigua.mytelegram.ui.objects.AppDrawer
+import com.antigua.mytelegram.utilits.AUTH
 import com.antigua.mytelegram.utilits.replaceActivity
 import com.antigua.mytelegram.utilits.replaceFragment
+import com.google.firebase.auth.FirebaseAuth
 
 private lateinit var mBinding: ActivityMainBinding
-    private lateinit var mAppDrawer: AppDrawer
-    private lateinit var mToolbar: Toolbar
+private lateinit var mAppDrawer: AppDrawer
+private lateinit var mToolbar: Toolbar
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -30,10 +32,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initFunc() {
-        if(false){
+        if (AUTH.currentUser != null) {
             setSupportActionBar(mToolbar)
             mAppDrawer.create()
-            replaceFragment(ChatsFragment())
+            replaceFragment(ChatsFragment(),false)
         } else {
             replaceActivity(RegisterActivity())
         }
@@ -43,5 +45,6 @@ class MainActivity : AppCompatActivity() {
     private fun initFields() {
         mToolbar = mBinding.mainToolbar
         mAppDrawer = AppDrawer(this, mToolbar)
+        AUTH = FirebaseAuth.getInstance()
     }
 }

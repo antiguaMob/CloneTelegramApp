@@ -1,10 +1,7 @@
 package com.antigua.mytelegram.ui.fragments
 
-import android.os.Bundle
+
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 
 //****************************************************************************************
 //https://stackoverflow.com/questions/64819181/how-to-make-basefragment-with-view-binding

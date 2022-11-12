@@ -43,3 +43,8 @@
 
 //Урок 10. Подключение к сервису Firebase. 
 // https://www.youtube.com/watch?v=bx5MLV4Wyn8&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=57
+
+//Урок 11. В этом видео мы сделаем возможность создавать и авторизовать нового пользователя
+//         по номеру  телефона в Firebase. Научимся работать с PhoneProviderFirebase, отправлять 
+//         смс для авторизации аккаунта в Firebase. 
+// https://www.youtube.com/watch?v=uhEpXD39oVA&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=56
