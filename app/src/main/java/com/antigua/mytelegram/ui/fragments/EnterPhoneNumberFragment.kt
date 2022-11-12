@@ -24,7 +24,7 @@ class EnterPhoneNumberFragment: BaseFragment(R.layout.fragment_enter_phone_numbe
         mCallback = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks(){
 
             override fun onVerificationCompleted(credential: PhoneAuthCredential) {
-                Log.d("MyLog","Verification Callback Completed")
+                //Log.d("MyLog","Verification Callback Completed")
                 AUTH.signInWithCredential(credential).addOnCompleteListener {
                     if(it.isSuccessful){
                         showToast("Добро пожаловать")
@@ -72,6 +72,7 @@ class EnterPhoneNumberFragment: BaseFragment(R.layout.fragment_enter_phone_numbe
                 .setCallbacks(mCallback)
                 .build()
         )
+        //Log.d("MyLog","verifyPhone completed")
 //********************************************************************
 //        PhoneAuthProvider.getInstance().verifyPhoneNumber(
 //            mPhoneNumber,

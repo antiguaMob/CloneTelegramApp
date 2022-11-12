@@ -46,9 +46,11 @@
 
     <EditText
         style="@style/editText"
+        android:layout_width="wrap_content"
         android:id="@+id/register_input_code"
         android:autofillHints=""
         android:hint="@string/register_hint_default_code"
+        android:textSize="30sp"
         android:maxLength="6"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
