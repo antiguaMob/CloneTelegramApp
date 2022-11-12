@@ -6,7 +6,6 @@ import com.antigua.mytelegram.MainActivity
 import com.antigua.mytelegram.R
 import com.antigua.mytelegram.utilits.*
 import kotlinx.android.synthetic.main.fragment_change_name.*
-import kotlin.concurrent.fixedRateTimer
 
 
 class ChangeNameFragment : Fragment(R.layout.fragment_change_name) {
