@@ -88,7 +88,13 @@
 //		   удаленное хранилище. Добавим автоматическое скрытие клавиатуры при смене фрагментов. 
 //https://www.youtube.com/watch?v=IUuApvej4k0&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=47
 
+//Урок 21. Получим из Firebase Storage адрес нашей картинки (URL) и сохраним его в базу данных
+//         Realtime Database.
+//https://www.youtube.com/watch?v=ylrdJ49mFwI&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=47
 
+//Урок 21. Научимся загружать и устанавливать фото пользователя. Научимся работать с библиотекой 
+//         Picasso. Создадим для нее функцию расширения. Исправим критический баг. 
+//https://www.youtube.com/watch?v=5k6xI6ndAi4&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=45
 
 
 
