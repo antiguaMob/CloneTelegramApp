@@ -70,6 +70,38 @@
 //         как использовать временные атрибуты в макете, что бы их не было видно в приложении. 
 //https://www.youtube.com/watch?v=o6kOEWWF2bk&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=51
 
+//Урок 17. Добавим возможность изменять username пользователя, а так же проверять перед изменением 
+//         его уникальность в базе данных, а так же удалять старый username из базы данных.
+//https://www.youtube.com/watch?v=9el-TPcj1zE&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=50
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
