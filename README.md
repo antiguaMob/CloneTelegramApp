@@ -7,6 +7,9 @@
 
 // Lib ->  Mike Penz, Material Drawer: https://github.com/mikepenz/MaterialDrawer
 // Lib -> CircleImageView : https://github.com/hdodenhof/CircleImageView
+// Lib -> Android-Image-Cropper: https://github.com/CanHub/Android-Image-Cropper
+                      Old->      https://github.com/ArthurHub/Android-Image-Cropper
+
  
 // Урок 1. Подготовка проекта.  В этом уроке подключим все необходимые зависимости нашего проекта. 
 // https://www.youtube.com/watch?v=iO8FMBWKO3Y&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=67
@@ -77,8 +80,13 @@
 //Урок 18. Поиск багов, устранение критической ошибки в Debug.
 // https://www.youtube.com/watch?v=Db1tGrpVmV0&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=49
 
- //Урок 19. Произведем рефакторинг кода. Добавим возможность изменение информацию о пользователе.
+//Урок 19. Произведем рефакторинг кода. Добавим возможность изменение информацию о пользователе.
 //https://www.youtube.com/watch?v=JHpjv4mvlC8&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=48
+
+//Урок 20. Добавим возможность изменение фото пользователя. Научимся работать с библиотекой
+//         Android-Image-Cropper и с Firebase Storage. Произведем отправку выбранной фотографии
+//		   удаленное хранилище. Добавим автоматическое скрытие клавиатуры при смене фрагментов. 
+//https://www.youtube.com/watch?v=IUuApvej4k0&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=47
 
 
 

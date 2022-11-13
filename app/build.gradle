@@ -41,7 +41,8 @@ android {
 }
 
 dependencies {
-
+// CropImageActivity
+    api 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
 // Import the BoM for the Firebase platform
     implementation platform('com.google.firebase:firebase-bom:31.0.2')
 
@@ -60,10 +61,10 @@ dependencies {
 
 
 // Add for NavController support
-    //noinspection GradleDependency
-    implementation "com.mikepenz:materialdrawer-nav:7.0.0"
+    // noinspection GradleDependency
+    // implementation "com.mikepenz:materialdrawer-nav:7.0.0"
 // Add for Android-Iconics support
-//    implementation "com.mikepenz:materialdrawer-iconics:7.0.0"
+//   implementation "com.mikepenz:materialdrawer-iconics:9.0.1"
 
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
     implementation 'androidx.core:core-ktx:1.9.0'
@@ -73,6 +74,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth-ktx:21.1.0'
     implementation 'com.google.android.gms:play-services-maps:18.1.0'
     implementation 'com.google.firebase:firebase-database-ktx:20.1.0'
+    implementation 'com.google.firebase:firebase-storage-ktx:20.1.0'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'

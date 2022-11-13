@@ -3,13 +3,12 @@ package com.antigua.mytelegram.ui.fragments
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
-import com.antigua.mytelegram.MainActivity
 import com.antigua.mytelegram.R
 import com.antigua.mytelegram.activities.RegisterActivity
-import com.antigua.mytelegram.utilits.AUTH
-import com.antigua.mytelegram.utilits.USER
-import com.antigua.mytelegram.utilits.replaceActivity
-import com.antigua.mytelegram.utilits.replaceFragment
+import com.antigua.mytelegram.utilits.*
+import com.antigua.mytelegram.utilits.AppConstants.APP_ACTIVITY
+import com.theartofdev.edmodo.cropper.CropImage
+import com.theartofdev.edmodo.cropper.CropImageView
 import kotlinx.android.synthetic.main.fragment_settings.*
 
 class SettingsFragment :  BaseFragment(R.layout.fragment_settings) {
@@ -32,7 +31,18 @@ class SettingsFragment :  BaseFragment(R.layout.fragment_settings) {
         settings_btn_change_bio.setOnClickListener {
             replaceFragment(ChangeBioFragment())
         }
+        settings_change_photo.setOnClickListener { changePhotoUser() }
     }
+
+    private fun changePhotoUser() {
+        CropImage.activity()
+            .setAspectRatio(1,1)
+            .setRequestedSize(600,600)
+            .setCropShape(CropImageView.CropShape.OVAL)
+            .start(APP_ACTIVITY)
+    }
+
+
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         activity?.menuInflater?.inflate(R.menu.settings_action_menu, menu)
@@ -42,7 +52,7 @@ class SettingsFragment :  BaseFragment(R.layout.fragment_settings) {
         when(item.itemId){
             R.id.settings_menu_exit -> {
                 AUTH.signOut()
-                (activity as MainActivity).replaceActivity(RegisterActivity())
+                APP_ACTIVITY.replaceActivity(RegisterActivity())
             }
             R.id.settings_menu_change_name ->{
                 replaceFragment(ChangeNameFragment())
