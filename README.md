@@ -77,6 +77,8 @@
 //Урок 18. Поиск багов, устранение критической ошибки в Debug.
 // https://www.youtube.com/watch?v=Db1tGrpVmV0&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=49
 
+ //Урок 19. Произведем рефакторинг кода. Добавим возможность изменение информацию о пользователе.
+//https://www.youtube.com/watch?v=JHpjv4mvlC8&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=48
 
 
 
