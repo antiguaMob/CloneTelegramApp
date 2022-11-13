@@ -74,8 +74,8 @@
 //         его уникальность в базе данных, а так же удалять старый username из базы данных.
 //https://www.youtube.com/watch?v=9el-TPcj1zE&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=50
 
-
-
+//Урок 18. Поиск багов, устранение критической ошибки в Debug.
+// https://www.youtube.com/watch?v=Db1tGrpVmV0&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=49
 
 
 
