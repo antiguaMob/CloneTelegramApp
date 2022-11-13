@@ -61,6 +61,18 @@
 //         Запишем изменённые данные в удаленную базу данных Firebase.
 //https://www.youtube.com/watch?v=RiwwfW77TWw&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=53
 
+//Урок 15. Произведем первичную инициализацию модели User. Сделаем при запуске приложения 
+//         обновления модели из базы данных Firebase. Заполним значения из базы данных поля
+//         для изменения имени и фамилии. 
+//https://www.youtube.com/watch?v=IATL2G3FvuA&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=52
+
+//Урок 16. Проинициализируем все поля фрагмента настроек данными из модели User. А так же, я покажу
+//         как использовать временные атрибуты в макете, что бы их не было видно в приложении. 
+//https://www.youtube.com/watch?v=o6kOEWWF2bk&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=51
+
+
+
+
 
 
 

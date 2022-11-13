@@ -5,14 +5,10 @@ import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
 import com.antigua.mytelegram.activities.RegisterActivity
 import com.antigua.mytelegram.databinding.ActivityMainBinding
+import com.antigua.mytelegram.models.User
 import com.antigua.mytelegram.ui.fragments.ChatsFragment
 import com.antigua.mytelegram.ui.objects.AppDrawer
-import com.antigua.mytelegram.utilits.AUTH
-import com.antigua.mytelegram.utilits.initFirebase
-import com.antigua.mytelegram.utilits.replaceActivity
-import com.antigua.mytelegram.utilits.replaceFragment
-
-
+import com.antigua.mytelegram.utilits.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -48,5 +44,14 @@ class MainActivity : AppCompatActivity() {
         mToolbar = mBinding.mainToolbar
         mAppDrawer = AppDrawer(this, mToolbar)
         initFirebase()
+        initUser()
+    }
+
+    private fun initUser() {
+        REF_DATABASE_ROOT.child(NODE_USERS).child(UID)
+            .addListenerForSingleValueEvent(AppValueEventListener{
+
+                USER = it.getValue(User::class.java) ?: User()
+            })
     }
 }

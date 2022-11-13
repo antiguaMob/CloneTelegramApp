@@ -1,18 +1,20 @@
 package com.antigua.mytelegram.ui.fragments
 
 import android.view.*
-import androidx.fragment.app.Fragment
 import com.antigua.mytelegram.MainActivity
 import com.antigua.mytelegram.R
 import com.antigua.mytelegram.utilits.*
 import kotlinx.android.synthetic.main.fragment_change_name.*
 
 
-class ChangeNameFragment : Fragment(R.layout.fragment_change_name) {
+class ChangeNameFragment : BaseFragment(R.layout.fragment_change_name) {
 
     override fun onResume() {
         super.onResume()
         setHasOptionsMenu(true)
+        val  fullnameList =USER.fullname.split(" ")
+        settings_input_name.setText(fullnameList[0])
+        settings_input_surname.setText(fullnameList[1])
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

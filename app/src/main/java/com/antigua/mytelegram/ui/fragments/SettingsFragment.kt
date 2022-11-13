@@ -7,14 +7,25 @@ import com.antigua.mytelegram.MainActivity
 import com.antigua.mytelegram.R
 import com.antigua.mytelegram.activities.RegisterActivity
 import com.antigua.mytelegram.utilits.AUTH
+import com.antigua.mytelegram.utilits.USER
 import com.antigua.mytelegram.utilits.replaceActivity
 import com.antigua.mytelegram.utilits.replaceFragment
+import kotlinx.android.synthetic.main.fragment_settings.*
 
 class SettingsFragment :  BaseFragment(R.layout.fragment_settings) {
 
     override fun onResume() {
         super.onResume()
         setHasOptionsMenu(true)
+        initFields()
+    }
+
+    private fun initFields() {
+        settings_bio.text = USER.bio
+        settings_full_name.text = USER.fullname
+        settings_phone_number.text = USER.phone
+        settings_status.text = USER.status
+        settings_username.text = USER.username
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
