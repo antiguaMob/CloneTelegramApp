@@ -1,8 +1,11 @@
 package com.antigua.mytelegram.ui.fragments
 
+import android.app.Activity.RESULT_OK
+import android.content.Intent
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import com.antigua.mytelegram.R
 import com.antigua.mytelegram.activities.RegisterActivity
 import com.antigua.mytelegram.utilits.*
@@ -39,7 +42,7 @@ class SettingsFragment :  BaseFragment(R.layout.fragment_settings) {
             .setAspectRatio(1,1)
             .setRequestedSize(600,600)
             .setCropShape(CropImageView.CropShape.OVAL)
-            .start(APP_ACTIVITY)
+            .start(APP_ACTIVITY,this)
     }
 
 
@@ -60,4 +63,34 @@ class SettingsFragment :  BaseFragment(R.layout.fragment_settings) {
         }
         return  true
     }
+    @Deprecated("Deprecated in Java")
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE
+            && resultCode == RESULT_OK && data != null){
+            val uri = CropImage.getActivityResult(data).uri
+            val path = REF_STORAGE_ROOT.child(FOLDER_PROFILE_IMAGE)
+                .child(CURRENT_UID)
+            path.putFile(uri).addOnCompleteListener { Task1 ->
+                if(Task1.isSuccessful){
+                    //showToast(getString(R.string.toast_data_update))
+                    path.downloadUrl.addOnCompleteListener { Task2 ->
+                        if(Task2.isSuccessful){
+                            val photoUrl = Task2.result.toString()
+                            REF_DATABASE_ROOT.child(NODE_USERS).child(CURRENT_UID)
+                                .child(CHILD_PHOTO_URL)
+                                .setValue(photoUrl)
+                                .addOnCompleteListener {
+                                    if(it.isSuccessful){
+                                        showToast(getString(R.string.toast_data_update))
+                                        USER.photoUrl = photoUrl
+                                    }
+                                }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 }

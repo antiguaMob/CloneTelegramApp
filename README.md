@@ -92,7 +92,7 @@
 //         Realtime Database.
 //https://www.youtube.com/watch?v=ylrdJ49mFwI&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=47
 
-//Урок 21. Научимся загружать и устанавливать фото пользователя. Научимся работать с библиотекой 
+//Урок 22. Научимся загружать и устанавливать фото пользователя. Научимся работать с библиотекой 
 //         Picasso. Создадим для нее функцию расширения. Исправим критический баг. 
 //https://www.youtube.com/watch?v=5k6xI6ndAi4&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=45
 

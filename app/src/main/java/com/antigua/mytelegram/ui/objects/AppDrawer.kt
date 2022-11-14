@@ -109,8 +109,7 @@ class AppDrawer (val mainActivity: AppCompatActivity,val toolbar: Toolbar) {
                     .withName("Вопросы о телеграм")
                     .withSelectable(false)
                     .withIcon(R.drawable.ic_menu_help),
-            )
-            .withOnDrawerItemClickListener(
+            ).withOnDrawerItemClickListener(
                 object : Drawer.OnDrawerItemClickListener{
                     override fun onItemClick(
                         view: View?,

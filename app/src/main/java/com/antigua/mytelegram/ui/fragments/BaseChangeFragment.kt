@@ -6,18 +6,20 @@ import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import com.antigua.mytelegram.R
 import com.antigua.mytelegram.utilits.AppConstants.APP_ACTIVITY
+import com.antigua.mytelegram.utilits.hideKeyboard
 
 
 open class BaseChangeFragment(layout :Int) : Fragment(layout) {
+
     override fun onStart() {
         super.onStart()
         setHasOptionsMenu(true)
         APP_ACTIVITY.mAppDrawer.disableDrawer()
+        hideKeyboard()
     }
 
     override fun onStop() {
         super.onStop()
-        APP_ACTIVITY.hideKeyboard()
     }
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         APP_ACTIVITY.menuInflater.inflate(R.menu.settings_menu_confirm,menu)
@@ -32,7 +34,5 @@ open class BaseChangeFragment(layout :Int) : Fragment(layout) {
         return true
     }
 
-    open fun change() {
-
-    }
+    open fun change() { }
 }

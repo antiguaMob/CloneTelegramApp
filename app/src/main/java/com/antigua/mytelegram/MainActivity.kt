@@ -26,16 +26,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         mBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
-    }
-
-    override fun onStart() {
-        super.onStart()
         APP_ACTIVITY = this
         initFields()
         initFunc()
     }
 
+
     private fun initFunc() {
+
         if (AUTH.currentUser != null) {
             setSupportActionBar(mToolbar)
             mAppDrawer.create()
@@ -61,38 +59,4 @@ class MainActivity : AppCompatActivity() {
             })
     }
 
-    @Deprecated("Deprecated in Java")
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if(requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE
-            && resultCode == RESULT_OK && data != null){
-            val uri = CropImage.getActivityResult(data).uri
-            val path = REF_STORAGE_ROOT.child(FOLDER_PROFILE_IMAGE)
-                .child(CURRENT_UID)
-            path.putFile(uri).addOnCompleteListener { Task1 ->
-                if(Task1.isSuccessful){
-                    //showToast(getString(R.string.toast_data_update))
-                    path.downloadUrl.addOnCompleteListener { Task2 ->
-                        if(Task2.isSuccessful){
-                            val photoUrl = Task2.result.toString()
-                            REF_DATABASE_ROOT.child(NODE_USERS).child(CURRENT_UID)
-                                .child(CHILD_PHOTO_URL)
-                                .setValue(photoUrl)
-                                .addOnCompleteListener {
-                                    if(it.isSuccessful){
-                                        showToast(getString(R.string.toast_data_update))
-                                        USER.photoUrl = photoUrl
-                                    }
-                                }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    fun hideKeyboard(){
-        val imm : InputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        imm.hideSoftInputFromWindow(window.decorView.windowToken,0)
-    }
 }
