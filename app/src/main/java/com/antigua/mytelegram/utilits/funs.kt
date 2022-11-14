@@ -10,7 +10,6 @@ import com.antigua.mytelegram.R
 import com.antigua.mytelegram.utilits.AppConstants.APP_ACTIVITY
 import com.squareup.picasso.Picasso
 import de.hdodenhof.circleimageview.CircleImageView
-import kotlinx.android.synthetic.main.fragment_settings.*
 
 
 fun showToast( message: String){
