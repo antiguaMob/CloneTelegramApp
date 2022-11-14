@@ -8,6 +8,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.antigua.mytelegram.R
 import com.antigua.mytelegram.utilits.AppConstants.APP_ACTIVITY
+import com.squareup.picasso.Picasso
+import de.hdodenhof.circleimageview.CircleImageView
+import kotlinx.android.synthetic.main.fragment_settings.*
 
 
 fun showToast( message: String){
@@ -40,6 +43,12 @@ fun Fragment.replaceFragment(fragment: Fragment ) {
 fun hideKeyboard(){
     val imm : InputMethodManager = APP_ACTIVITY.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
     imm.hideSoftInputFromWindow(APP_ACTIVITY.window.decorView.windowToken,0)
+}
+fun CircleImageView.downloadAndSetImage(url: String){
+    Picasso.get()
+        .load(url)
+        .placeholder(R.drawable.default_photo)
+        .into(this)
 }
 //fun CircleImageView.donwloadAndSetImage(url:String){
 //    Picasso.get()

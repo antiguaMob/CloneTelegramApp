@@ -10,6 +10,7 @@ import com.antigua.mytelegram.R
 import com.antigua.mytelegram.activities.RegisterActivity
 import com.antigua.mytelegram.utilits.*
 import com.antigua.mytelegram.utilits.AppConstants.APP_ACTIVITY
+import com.squareup.picasso.Picasso
 import com.theartofdev.edmodo.cropper.CropImage
 import com.theartofdev.edmodo.cropper.CropImageView
 import kotlinx.android.synthetic.main.fragment_settings.*
@@ -82,6 +83,7 @@ class SettingsFragment :  BaseFragment(R.layout.fragment_settings) {
                                 .setValue(photoUrl)
                                 .addOnCompleteListener {
                                     if(it.isSuccessful){
+                                       settings_user_photo.downloadAndSetImage(photoUrl)
                                         showToast(getString(R.string.toast_data_update))
                                         USER.photoUrl = photoUrl
                                     }

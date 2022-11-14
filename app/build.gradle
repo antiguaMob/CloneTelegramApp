@@ -41,6 +41,8 @@ android {
 }
 
 dependencies {
+//Picasso
+    implementation 'com.squareup.picasso:picasso:2.8'
 // CropImageActivity
     api 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
 // Import the BoM for the Firebase platform

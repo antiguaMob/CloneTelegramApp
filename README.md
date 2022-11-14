@@ -9,6 +9,7 @@
 // Lib -> CircleImageView : https://github.com/hdodenhof/CircleImageView
 // Lib -> Android-Image-Cropper: https://github.com/CanHub/Android-Image-Cropper
                       Old->      https://github.com/ArthurHub/Android-Image-Cropper
+// Lib -> Picasso: https://github.com/square/picasso
 
  
 // Урок 1. Подготовка проекта.  В этом уроке подключим все необходимые зависимости нашего проекта. 
