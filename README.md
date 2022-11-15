@@ -97,7 +97,9 @@
 //         Picasso. Создадим для нее функцию расширения. Исправим критический баг. 
 //https://www.youtube.com/watch?v=5k6xI6ndAi4&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=45
 
-
+//Урок 23. Произведем рефакторинг кода, создадим функции высшего порядка, научимся использовать
+//         живые шаблоны.
+//https://www.youtube.com/watch?v=wXyq3yA4Ajs&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=44
 
 
 
