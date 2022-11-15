@@ -10,7 +10,7 @@
 // Lib -> Android-Image-Cropper: https://github.com/CanHub/Android-Image-Cropper
                       Old->      https://github.com/ArthurHub/Android-Image-Cropper
 // Lib -> Picasso: https://github.com/square/picasso
-
+//**********************************************************************************************
  
 // Урок 1. Подготовка проекта.  В этом уроке подключим все необходимые зависимости нашего проекта. 
 // https://www.youtube.com/watch?v=iO8FMBWKO3Y&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=67
@@ -108,7 +108,15 @@
 //         Научимся работать с ENUM. А так же записывать статус в базу данных Firebase.
 //https://www.youtube.com/watch?v=9vXj70MXzB8&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=42
 
+//Урок 26. Работа с GitHub и системой контроля версий. Клонирование проекта, commit, push.
+//https://www.youtube.com/watch?v=IoQ0tmjCWjw&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=41
 
+//Урок 27. Обсудим так называемый  Task management, учимся ставить задачи и решать их.
+//         Определим дельнейшие задачи которые нам необходимо решить.
+//https://www.youtube.com/watch?v=xpt-fVUGlmQ&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=40
+
+//Урок 27. Научимся запрашивать разрешение у пользователя на считывание контактов. 
+//https://www.youtube.com/watch?v=sluGqAVkWCc&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=39
 
 
 

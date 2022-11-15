@@ -1,8 +1,10 @@
 package com.antigua.mytelegram
 
+import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
 import com.antigua.mytelegram.activities.RegisterActivity
 import com.antigua.mytelegram.databinding.ActivityMainBinding
 import com.antigua.mytelegram.ui.fragments.ChatsFragment
@@ -24,8 +26,15 @@ class MainActivity : AppCompatActivity() {
         APP_ACTIVITY = this
         initFirebase()
         initUser{
+            initContacts()
             initFields()
             initFunc()
+        }
+    }
+
+    private fun initContacts() {
+        if(checkPermission(READ_CONTACTS)){
+            showToast("Чтение контактов")
         }
     }
 
@@ -52,5 +61,16 @@ class MainActivity : AppCompatActivity() {
     override fun onStop() {
         super.onStop()
         AppStates.updateState(AppStates.OFFLINE)
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if(ContextCompat.checkSelfPermission(APP_ACTIVITY, READ_CONTACTS)==PackageManager.PERMISSION_GRANTED){
+            initContacts()
+        }
     }
 }
