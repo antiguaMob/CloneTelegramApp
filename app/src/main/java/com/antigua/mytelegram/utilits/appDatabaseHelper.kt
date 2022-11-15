@@ -1,5 +1,6 @@
 package com.antigua.mytelegram.utilits
 
+import android.net.Uri
 import com.antigua.mytelegram.models.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -34,4 +35,24 @@ fun initFirebase(){
     USER = User()
     CURRENT_UID = AUTH.currentUser?.uid.toString()
     REF_STORAGE_ROOT = FirebaseStorage.getInstance().reference
+}
+
+inline fun putUrlToDatabase(url: String, crossinline function: () -> Unit) {
+    REF_DATABASE_ROOT.child(NODE_USERS).child(CURRENT_UID)
+        .child(CHILD_PHOTO_URL)
+        .setValue(url)
+        .addOnSuccessListener {  function() }
+        .addOnFailureListener { showToast(it.message.toString()) }
+}
+
+inline  fun getUrlFromStorage(path: StorageReference, crossinline  function: (url:String) -> Unit) {
+    path.downloadUrl
+        .addOnSuccessListener { function(it.toString()) }
+        .addOnFailureListener{ showToast(it.message.toString()) }
+}
+
+inline fun putImageToStorage(uri: Uri, path: StorageReference, crossinline function: () -> Unit) {
+    path.putFile(uri)
+        .addOnSuccessListener { function() }
+        .addOnFailureListener{ showToast(it.message.toString()) }
 }

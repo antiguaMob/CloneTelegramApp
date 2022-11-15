@@ -37,6 +37,7 @@ class SettingsFragment :  BaseFragment(R.layout.fragment_settings) {
         settings_change_photo.setOnClickListener {
             changePhotoUser()
         }
+        settings_user_photo.downloadAndSetImage(USER.photoUrl)
     }
 
     private fun changePhotoUser() {
@@ -76,28 +77,16 @@ class SettingsFragment :  BaseFragment(R.layout.fragment_settings) {
             val path = REF_STORAGE_ROOT.child(FOLDER_PROFILE_IMAGE)
                 .child(CURRENT_UID)
             Log.d("MyLog","path  -> $path")
-            path.putFile(uri).addOnCompleteListener { task1 ->
-                if(task1.isSuccessful){
-                    path.downloadUrl.addOnCompleteListener { task2 ->
-                        if(task2.isSuccessful){
-                            val photoUrl = task2.result.toString()
-                            Log.d("MyLog","DownloadUrl  -> $photoUrl")
-                            REF_DATABASE_ROOT.child(NODE_USERS).child(CURRENT_UID)
-                                .child(CHILD_PHOTO_URL)
-                                .setValue(photoUrl)
-                                .addOnCompleteListener {
-                                    if(it.isSuccessful){
-                                       Log.d("MyLog","Set photo  -> $photoUrl")
-                                       settings_user_photo.downloadAndSetImage(photoUrl)
-                                        showToast(getString(R.string.toast_data_update))
-                                        USER.photoUrl = photoUrl
-                                    }
-                                }
-                        }
+            putImageToStorage(uri,path){
+                getUrlFromStorage(path){
+                    putUrlToDatabase(it){
+                        Log.d("MyLog","Set photo  -> $it")
+                        settings_user_photo.downloadAndSetImage(it)
+                        showToast(getString(R.string.toast_data_update))
+                        USER.photoUrl = it
                     }
                 }
             }
         }
-    }
-
+   }
 }
