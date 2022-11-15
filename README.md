@@ -115,13 +115,16 @@
 //         Определим дельнейшие задачи которые нам необходимо решить.
 //https://www.youtube.com/watch?v=xpt-fVUGlmQ&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=40
 
-//Урок 27. Научимся запрашивать разрешение у пользователя на считывание контактов. 
+//Урок 28. Научимся запрашивать разрешение у пользователя на считывание контактов. 
 //https://www.youtube.com/watch?v=sluGqAVkWCc&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=39
 
+//Урок 29. Разберем, что такое КОРУТИНЫ (COROUTINE) в Kotlin и для чего они нужны. 
+//         Научимся запускать новые корутины. 
+//https://www.youtube.com/watch?v=38UGe9LJgr0&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=38
 
-
-
-
+//Урок 30. Создадим общую модель CommonModel. Научимся считывать телефонную книгу и сохранять 
+//         данные в массив. 
+//https://www.youtube.com/watch?v=IlyQtIgkLrM&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=37
 
 
 

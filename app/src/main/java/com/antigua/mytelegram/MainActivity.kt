@@ -11,6 +11,9 @@ import com.antigua.mytelegram.ui.fragments.ChatsFragment
 import com.antigua.mytelegram.ui.objects.AppDrawer
 import com.antigua.mytelegram.utilits.*
 import com.antigua.mytelegram.utilits.AppConstants.APP_ACTIVITY
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 
 class MainActivity : AppCompatActivity() {
@@ -26,17 +29,14 @@ class MainActivity : AppCompatActivity() {
         APP_ACTIVITY = this
         initFirebase()
         initUser{
-            initContacts()
+            CoroutineScope(Dispatchers.IO).launch {
+                initContacts()
+            }
             initFields()
             initFunc()
         }
     }
 
-    private fun initContacts() {
-        if(checkPermission(READ_CONTACTS)){
-            showToast("Чтение контактов")
-        }
-    }
 
     private fun initFunc() {
         setSupportActionBar(mToolbar)
