@@ -29,10 +29,10 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun initFunc() {
-
+        setSupportActionBar(mToolbar)
+        mAppDrawer.create()
         if (AUTH.currentUser != null) {
-            setSupportActionBar(mToolbar)
-            mAppDrawer.create()
+
             replaceFragment(ChatsFragment(),false)
         } else {
             replaceActivity(RegisterActivity())

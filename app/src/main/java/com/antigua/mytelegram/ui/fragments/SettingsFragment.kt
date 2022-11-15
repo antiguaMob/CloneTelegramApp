@@ -2,6 +2,7 @@ package com.antigua.mytelegram.ui.fragments
 
 import android.app.Activity.RESULT_OK
 import android.content.Intent
+import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
@@ -33,7 +34,9 @@ class SettingsFragment :  BaseFragment(R.layout.fragment_settings) {
         settings_btn_change_bio.setOnClickListener {
             replaceFragment(ChangeBioFragment())
         }
-        settings_change_photo.setOnClickListener { changePhotoUser() }
+        settings_change_photo.setOnClickListener {
+            changePhotoUser()
+        }
     }
 
     private fun changePhotoUser() {
@@ -62,24 +65,29 @@ class SettingsFragment :  BaseFragment(R.layout.fragment_settings) {
         }
         return  true
     }
+
     @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if(requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE
             && resultCode == RESULT_OK && data != null){
+            Log.d("MyLog","CropImage -> RESULT_OK")
             val uri = CropImage.getActivityResult(data).uri
             val path = REF_STORAGE_ROOT.child(FOLDER_PROFILE_IMAGE)
                 .child(CURRENT_UID)
-            path.putFile(uri).addOnCompleteListener { Task1 ->
-                if(Task1.isSuccessful){
-                    path.downloadUrl.addOnCompleteListener { Task2 ->
-                        if(Task2.isSuccessful){
-                            val photoUrl = Task2.result.toString()
+            Log.d("MyLog","path  -> $path")
+            path.putFile(uri).addOnCompleteListener { task1 ->
+                if(task1.isSuccessful){
+                    path.downloadUrl.addOnCompleteListener { task2 ->
+                        if(task2.isSuccessful){
+                            val photoUrl = task2.result.toString()
+                            Log.d("MyLog","DownloadUrl  -> $photoUrl")
                             REF_DATABASE_ROOT.child(NODE_USERS).child(CURRENT_UID)
                                 .child(CHILD_PHOTO_URL)
                                 .setValue(photoUrl)
                                 .addOnCompleteListener {
                                     if(it.isSuccessful){
+                                       Log.d("MyLog","Set photo  -> $photoUrl")
                                        settings_user_photo.downloadAndSetImage(photoUrl)
                                         showToast(getString(R.string.toast_data_update))
                                         USER.photoUrl = photoUrl
