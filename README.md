@@ -104,7 +104,9 @@
 //Урок 24. Обновим данные в боковом меню при изменении этих данных  в настройках.
 //https://www.youtube.com/watch?v=smUy99sFZLo&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=43
 
-
+//Урок 25. Научимся устанавливать статус пользователя: "в сети", "был недавно", "печатает". 
+//         Научимся работать с ENUM. А так же записывать статус в базу данных Firebase.
+//https://www.youtube.com/watch?v=9vXj70MXzB8&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=42
 
 
 

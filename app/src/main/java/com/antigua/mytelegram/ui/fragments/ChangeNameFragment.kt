@@ -2,6 +2,7 @@ package com.antigua.mytelegram.ui.fragments
 
 import com.antigua.mytelegram.R
 import com.antigua.mytelegram.utilits.*
+import com.antigua.mytelegram.utilits.AppConstants.APP_ACTIVITY
 import kotlinx.android.synthetic.main.fragment_change_name.*
 
 
@@ -34,6 +35,7 @@ class ChangeNameFragment : BaseChangeFragment(R.layout.fragment_change_name) {
                     if (it.isSuccessful) {
                         showToast(getString(R.string.toast_data_update))
                         USER.fullname = fullname
+                        APP_ACTIVITY.mAppDrawer.updateHeader()
                         fragmentManager?.popBackStack()
                     }
                 }
