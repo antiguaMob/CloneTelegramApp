@@ -101,6 +101,8 @@
 //         живые шаблоны.
 //https://www.youtube.com/watch?v=wXyq3yA4Ajs&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=44
 
+//Урок 24. Обновим данные в боковом меню при изменении этих данных  в настройках.
+//https://www.youtube.com/watch?v=smUy99sFZLo&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=43
 
 
 
