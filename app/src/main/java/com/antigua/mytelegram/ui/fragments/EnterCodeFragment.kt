@@ -23,29 +23,26 @@ class EnterCodeFragment(val phoneNumber: String, val id: String) :  BaseFragment
     private fun enterCode() {
         //Log.d("MyLog","Enter code")
         val code = register_input_code.text.toString()
-        val credential = PhoneAuthProvider.getCredential(id,code)
+        val credential = PhoneAuthProvider.getCredential(id, code)
         AUTH.signInWithCredential(credential).addOnCompleteListener {
-            if(it.isSuccessful){
+            if (it.isSuccessful) {
                 val uid = AUTH.currentUser?.uid.toString()
                 //Log.d("MyLog","Sign In: $uid ")
-                val dateMap = mutableMapOf<String,Any>()
-                dateMap [CHILD_ID] = uid
-                dateMap[CHILD_PHONE]  = phoneNumber
+                val dateMap = mutableMapOf<String, Any>()
+                dateMap[CHILD_ID] = uid
+                dateMap[CHILD_PHONE] = phoneNumber
                 dateMap[CHILD_USERNAME] = uid
-                //Log.d("MyLog","Database: $REF_DATABASE_ROOT")
-                REF_DATABASE_ROOT.child(NODE_USERS).child(uid).updateChildren(dateMap)
-                    .addOnCompleteListener { task2->
-                    if(task2.isSuccessful){
-                        showToast("Добро пожаловать")
-                        (activity as RegisterActivity).replaceActivity(MainActivity())
-                    } else {
-                        showToast(task2.exception?.message.toString())
+                REF_DATABASE_ROOT.child(NODE_PHONES).child(phoneNumber).setValue(uid)
+                    .addOnFailureListener { showToast(it.message.toString()) }
+                    .addOnSuccessListener {
+                        REF_DATABASE_ROOT.child(NODE_USERS).child(uid).updateChildren(dateMap)
+                            .addOnSuccessListener {
+                                showToast("Добро пожаловать")
+                                (activity as RegisterActivity).replaceActivity(MainActivity())
+                            }
+                            .addOnFailureListener { showToast(it.message.toString()) }
                     }
-                }
-            } else {
-                //Log.d("MyLog","Sign In error")
-                showToast(it.exception?.message.toString())
-            }
+            } else  showToast(it.exception?.message.toString())
         }
     }
 }

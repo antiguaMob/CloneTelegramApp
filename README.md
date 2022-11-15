@@ -126,7 +126,9 @@
 //         данные в массив. 
 //https://www.youtube.com/watch?v=IlyQtIgkLrM&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=37
 
-
+//Урок 31. Cчитаем номера телефонов, сравним с номерами из телефонной книги и запишим все номера
+//         которые совпали в отдельную ноду. 
+//https://www.youtube.com/watch?v=INT1O-1l3Sg&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=36
 
 
 
