@@ -130,6 +130,9 @@
 //         которые совпали в отдельную ноду. 
 //https://www.youtube.com/watch?v=INT1O-1l3Sg&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=36
 
+//Урок 32. Cоздадим фрагмент для отображения контактов и отдельный элемент для списка RecycleView. 
+//https://www.youtube.com/watch?v=CL49WrJ5OKI&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=36
+
 
 
 
