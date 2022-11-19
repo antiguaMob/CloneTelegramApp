@@ -149,6 +149,13 @@
 //Урок 36. Доделаем макет для создания одиночного чата. 
 //https://www.youtube.com/watch?v=7StlARxMLGo&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=31
 
+//Урок 37. Обновим тулбар в одиночном чате. Подключим слушателя, который будет слушать изменения
+//         в базе данных и обновлять данные тулбаре. 
+//https://www.youtube.com/watch?v=5UGzsF8k-SI&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=30
+
+
+
+
 
 
 
