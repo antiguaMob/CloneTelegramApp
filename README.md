@@ -162,7 +162,8 @@
 //Урок 40. Получение сообщений из Firebase и отображение их в RecyclerView одиночного чата.
 //https://www.youtube.com/watch?v=Zqv6qEEgGSg&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=27
 
-
+//Урок 41. Реализуем архитектуру одного активити. Приведем в порядок код.
+//https://www.youtube.com/watch?v=DDDqR9a50yA&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=27
 
 
 

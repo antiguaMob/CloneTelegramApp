@@ -1,9 +1,9 @@
-package com.antigua.mytelegram.ui.fragments
+package com.antigua.mytelegram.ui.fragments.register
 
-import com.antigua.mytelegram.MainActivity
 import com.antigua.mytelegram.R
-import com.antigua.mytelegram.activities.RegisterActivity
+import com.antigua.mytelegram.ui.fragments.BaseFragment
 import com.antigua.mytelegram.utilits.*
+import com.antigua.mytelegram.utilits.AppConstants.APP_ACTIVITY
 import com.google.firebase.auth.PhoneAuthProvider
 import kotlinx.android.synthetic.main.fragment_enter_code.*
 
@@ -11,7 +11,7 @@ class EnterCodeFragment(val phoneNumber: String, val id: String) :  BaseFragment
 
     override fun onStart() {
         super.onStart()
-        (activity as RegisterActivity).title = phoneNumber
+        APP_ACTIVITY.title = phoneNumber
        register_input_code.addTextChangedListener(AppTextWatcher {
               val string = register_input_code.text.toString()
               if(string.length==6){
@@ -38,7 +38,7 @@ class EnterCodeFragment(val phoneNumber: String, val id: String) :  BaseFragment
                         REF_DATABASE_ROOT.child(NODE_USERS).child(uid).updateChildren(dateMap)
                             .addOnSuccessListener {
                                 showToast("Добро пожаловать")
-                                (activity as RegisterActivity).replaceActivity(MainActivity())
+                                restartActivity()
                             }
                             .addOnFailureListener { showToast(it.message.toString()) }
                     }

@@ -7,7 +7,6 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import com.antigua.mytelegram.R
-import com.antigua.mytelegram.activities.RegisterActivity
 import com.antigua.mytelegram.utilits.*
 import com.antigua.mytelegram.utilits.AppConstants.APP_ACTIVITY
 import com.theartofdev.edmodo.cropper.CropImage
@@ -55,11 +54,12 @@ class SettingsFragment :  BaseFragment(R.layout.fragment_settings) {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        /* Слушатель выбора пунктов выпадающего меню */
         when(item.itemId){
             R.id.settings_menu_exit -> {
                 AppStates.updateState(AppStates.OFFLINE)
                 AUTH.signOut()
-                APP_ACTIVITY.replaceActivity(RegisterActivity())
+                restartActivity()
             }
             R.id.settings_menu_change_name ->{
                 replaceFragment(ChangeNameFragment())

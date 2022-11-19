@@ -5,9 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
-import com.antigua.mytelegram.activities.RegisterActivity
 import com.antigua.mytelegram.databinding.ActivityMainBinding
-import com.antigua.mytelegram.ui.fragments.ChatsFragment
+import com.antigua.mytelegram.ui.fragments.MainFragment
+import com.antigua.mytelegram.ui.fragments.register.EnterPhoneNumberFragment
 import com.antigua.mytelegram.ui.objects.AppDrawer
 import com.antigua.mytelegram.utilits.*
 import com.antigua.mytelegram.utilits.AppConstants.APP_ACTIVITY
@@ -39,12 +39,13 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun initFunc() {
+        /* Функция инициализирует функциональность приложения */
         setSupportActionBar(mToolbar)
         mAppDrawer.create()
         if (AUTH.currentUser != null) {
-            replaceFragment(ChatsFragment(),false)
+            replaceFragment(MainFragment(),false)
         } else {
-            replaceActivity(RegisterActivity())
+            replaceFragment(EnterPhoneNumberFragment(),false)
         }
     }
 
