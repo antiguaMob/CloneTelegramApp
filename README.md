@@ -139,8 +139,12 @@
 
 //Урок 34. Что такое утечка памяти? Научимся работать с Android Profile, найдем и устраним утечку
 //         памяти в нашем приложении. 
+//https://tproger.ru/translations/android-memory-leak/
 //https://www.youtube.com/watch?v=58HNvOGx16Q&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=34
 
+ //Урок 35. Начнем разрабатывать макет для создания одиночного чата. Создадим специальный тулбар
+//          для отображения информации о пользователе. 
+//https://www.youtube.com/watch?v=SQrDjdNmSoY&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=32
 
 
 
