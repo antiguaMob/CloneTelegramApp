@@ -14,8 +14,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:src="@drawable/default_photo"
-        app:civ_circle_background_color="@color/accent"
-        android:layout_marginStart="@dimen/app_small_margin" />
+        app:civ_circle_background_color="@color/accent" />
 
     <TextView
         android:id="@+id/contact_fullname"

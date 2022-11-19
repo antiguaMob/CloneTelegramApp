@@ -146,8 +146,8 @@
 //          для отображения информации о пользователе. 
 //https://www.youtube.com/watch?v=SQrDjdNmSoY&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=32
 
-
-
+//Урок 36. Доделаем макет для создания одиночного чата. 
+//https://www.youtube.com/watch?v=7StlARxMLGo&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=31
 
 
 
