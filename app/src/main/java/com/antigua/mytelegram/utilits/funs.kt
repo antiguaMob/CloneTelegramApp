@@ -13,7 +13,8 @@ import com.antigua.mytelegram.R
 import com.antigua.mytelegram.models.CommonModel
 import com.antigua.mytelegram.utilits.AppConstants.APP_ACTIVITY
 import com.squareup.picasso.Picasso
-
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 fun showToast( message: String){
@@ -83,4 +84,11 @@ fun initContacts() {
 
 
     }
+}
+
+fun String.asTime(): String {
+    val time = Date(this.toLong())
+    val timeFormat = SimpleDateFormat("HH:mm", Locale.getDefault())
+    return timeFormat.format(time)
+
 }

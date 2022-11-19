@@ -159,6 +159,9 @@
 //Урок 39. Реализуем отправку сообщений в Fireabase.
 //https://www.youtube.com/watch?v=ix0JGwEt-3Y&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=28
 
+//Урок 40. Получение сообщений из Firebase и отображение их в RecyclerView одиночного чата.
+//https://www.youtube.com/watch?v=Zqv6qEEgGSg&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=27
+
 
 
 

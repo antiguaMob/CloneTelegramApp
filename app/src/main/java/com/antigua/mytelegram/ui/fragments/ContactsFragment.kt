@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.antigua.mytelegram.R
 import com.antigua.mytelegram.models.CommonModel
+import com.antigua.mytelegram.ui.fragments.single_chat.SingleChatFragment
 import com.antigua.mytelegram.utilits.*
 import com.antigua.mytelegram.utilits.AppConstants.APP_ACTIVITY
 import com.firebase.ui.database.FirebaseRecyclerAdapter

@@ -1,9 +1,11 @@
-package com.antigua.mytelegram.ui.fragments
+package com.antigua.mytelegram.ui.fragments.single_chat
 
 import android.view.View
+import androidx.recyclerview.widget.RecyclerView
 import com.antigua.mytelegram.R
 import com.antigua.mytelegram.models.CommonModel
 import com.antigua.mytelegram.models.UserModel
+import com.antigua.mytelegram.ui.fragments.BaseFragment
 import com.antigua.mytelegram.utilits.*
 import com.antigua.mytelegram.utilits.AppConstants.APP_ACTIVITY
 import com.google.firebase.database.DatabaseReference
@@ -17,9 +19,33 @@ class SingleChatFragment(private val contact: CommonModel) : BaseFragment(R.layo
     private lateinit var mReceivingUser: UserModel
     private lateinit var mToolbarInfo: View
     private lateinit var mRefUser: DatabaseReference
+    private lateinit var mRefMessages :DatabaseReference
+    private lateinit var mAdapter: SingleChatAdapter
+    private lateinit var mRecyclerView: RecyclerView
+    private lateinit var mMessageListener: AppValueEventListener
+    private var mListMessages = emptyList<CommonModel>()
 
     override fun onResume() {
         super.onResume()
+        initToolbar()
+        initRecycleView()
+    }
+
+    private fun initRecycleView() {
+        mRecyclerView = chat_recycler_view
+        mAdapter = SingleChatAdapter()
+        mRefMessages = REF_DATABASE_ROOT.child(NODE_MESSAGES).child(CURRENT_UID)
+            .child(contact.id)
+        mRecyclerView.adapter = mAdapter
+        mMessageListener = AppValueEventListener { dataSnapshot ->
+            mListMessages = dataSnapshot.children.map { it.getCommonModel() }
+            mAdapter.setList(mListMessages)
+            mRecyclerView.smoothScrollToPosition(mAdapter.itemCount)
+        }
+        mRefMessages.addValueEventListener(mMessageListener)
+    }
+
+    private fun initToolbar() {
         mToolbarInfo = APP_ACTIVITY.mToolbar.toolbar_info
         mToolbarInfo.visibility = View.VISIBLE
         mListenerInfoToolbar = AppValueEventListener {
@@ -33,7 +59,7 @@ class SingleChatFragment(private val contact: CommonModel) : BaseFragment(R.layo
             if (message.isEmpty()) {
                 showToast("Введите сообщение")
             } else {
-                sendMessage(message, contact.id, TYPE_TEXT,) {
+                sendMessage(message, contact.id, TYPE_TEXT) {
                     chat_input_message.setText("")
                 }
             }
@@ -54,6 +80,7 @@ class SingleChatFragment(private val contact: CommonModel) : BaseFragment(R.layo
         super.onPause()
         mToolbarInfo.visibility = View.GONE
         mRefUser.removeEventListener(mListenerInfoToolbar)
+        mRefMessages.removeEventListener(mMessageListener)
     }
 }
 
