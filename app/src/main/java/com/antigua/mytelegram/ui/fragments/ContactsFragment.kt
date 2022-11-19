@@ -34,11 +34,17 @@ class ContactsFragment : BaseFragment(R.layout.fragment_contacts) {
     private fun initRecyclerView() {
         mRecyclerView = contacts_recycle_view
         mRefContacts = REF_DATABASE_ROOT.child(NODE_PHONES_CONTACTS).child(CURRENT_UID)
+
+        /* Настройка для адаптера , где указываем какие данные  и откуда получать */
         val options = FirebaseRecyclerOptions.Builder<CommonModel>()
             .setQuery(mRefContacts,CommonModel::class.java)
             .build()
+
+        /* Адаптер принимает данные , отображает в холдере */
         mAdapter = object : FirebaseRecyclerAdapter<CommonModel,ContactsHolder> (options){
+
             override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactsHolder {
+                 /* Запускается тогда когда адаптер получает доступ к ViewGroup */
                   val view = LayoutInflater.from(parent.context).inflate(R.layout.contact_item,parent,false)
                 return  ContactsHolder(view)
             }
@@ -51,10 +57,14 @@ class ContactsFragment : BaseFragment(R.layout.fragment_contacts) {
                mRefUsers = REF_DATABASE_ROOT.child(NODE_USERS).child(model.id)
                 mRefUserListener = AppValueEventListener {
                     val contact = it.getCommonModel()
-                    holder.name.text = contact.fullname
+                    if (contact.fullname.isEmpty()){
+                        holder.name.text  = model.fullname
+                    } else {
+                        holder.name.text = contact.fullname
+                    }
                     holder.status.text = contact.state
                     holder.photo.downloadAndSetImage(contact.photoUrl)
-                    holder.itemView.setOnClickListener { replaceFragment(SingleChatFragment(contact)) }
+                    holder.itemView.setOnClickListener { replaceFragment(SingleChatFragment(model)) }
                 }
 
                mRefUsers.addValueEventListener(mRefUserListener)
