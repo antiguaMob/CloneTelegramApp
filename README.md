@@ -10,6 +10,7 @@
 // Lib -> Android-Image-Cropper: https://github.com/CanHub/Android-Image-Cropper
                       Old->      https://github.com/ArthurHub/Android-Image-Cropper
 // Lib -> Picasso: https://github.com/square/picasso
+// Lib -> FirebaseUI-Android  https://github.com/firebase/FirebaseUI-Android
 //**********************************************************************************************
  
 // Урок 1. Подготовка проекта.  В этом уроке подключим все необходимые зависимости нашего проекта. 
@@ -133,11 +134,12 @@
 //Урок 32. Cоздадим фрагмент для отображения контактов и отдельный элемент для списка RecycleView. 
 //https://www.youtube.com/watch?v=CL49WrJ5OKI&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=36
 
+//Урок 33. Заполним RecyclerView  для отображения контактов. Получим данные из Firebase.
+//https://www.youtube.com/watch?v=CE-T1W1OPzY&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=37
 
-
-
-
-
+//Урок 34. Что такое утечка памяти? Научимся работать с Android Profile, найдем и устраним утечку
+//         памяти в нашем приложении. 
+//https://www.youtube.com/watch?v=58HNvOGx16Q&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=34
 
 
 
