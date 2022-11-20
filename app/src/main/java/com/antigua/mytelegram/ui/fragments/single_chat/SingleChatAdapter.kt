@@ -5,16 +5,20 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.DiffUtil.DiffResult
 import androidx.recyclerview.widget.RecyclerView
 import com.antigua.mytelegram.R
 import com.antigua.mytelegram.models.CommonModel
 import com.antigua.mytelegram.utilits.CURRENT_UID
+import com.antigua.mytelegram.utilits.DiffUtilCallback
 import com.antigua.mytelegram.utilits.asTime
 import kotlinx.android.synthetic.main.message_item.view.*
 
 class SingleChatAdapter : RecyclerView.Adapter<SingleChatAdapter.SingleChatHolder>() {
 
     private var mListMessagesCache = emptyList<CommonModel>()
+    private lateinit var mDiffResult: DiffResult
 
     class SingleChatHolder(view: View) : RecyclerView.ViewHolder(view){
         val blockUserMessage : ConstraintLayout = view.block_user_message
@@ -41,7 +45,7 @@ class SingleChatAdapter : RecyclerView.Adapter<SingleChatAdapter.SingleChatHolde
             holder.chatUserMessageTime.text =
                 mListMessagesCache[position].timeStamp.toString().asTime()
         } else {
-            holder.blockUserMessage.visibility = View.GONE
+            holder.blockReceivedMessage.visibility = View.GONE
             holder.chatReceivedMessage.visibility = View.VISIBLE
             holder.chatReceivedMessage.text = mListMessagesCache[position].text
             holder.chatReceivedMessageTime.text =
@@ -52,9 +56,13 @@ class SingleChatAdapter : RecyclerView.Adapter<SingleChatAdapter.SingleChatHolde
 
     override fun getItemCount(): Int = mListMessagesCache.size
 
-    fun setList(list: List<CommonModel>){
-        mListMessagesCache = list
-        notifyDataSetChanged()
+    fun addItem(item: CommonModel){
+        val newList = mutableListOf<CommonModel>()
+        newList.addAll(mListMessagesCache)
+        newList.add(item)
+        mDiffResult = DiffUtil.calculateDiff(DiffUtilCallback(mListMessagesCache,newList))
+        mDiffResult.dispatchUpdatesTo(this)
+        mListMessagesCache = newList
     }
 }
 
