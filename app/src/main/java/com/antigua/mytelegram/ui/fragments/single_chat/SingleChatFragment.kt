@@ -24,7 +24,7 @@ class SingleChatFragment(private val contact: CommonModel) : BaseFragment(R.layo
     private lateinit var mAdapter: SingleChatAdapter
     private lateinit var mRecyclerView: RecyclerView
     private lateinit var mMessageListener: ChildEventListener
-    private var mListMessages = mutableListOf<CommonModel>()
+    //private var mListMessages = mutableListOf<CommonModel>()
 
     override fun onResume() {
         super.onResume()
