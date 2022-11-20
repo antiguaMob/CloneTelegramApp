@@ -1,7 +1,11 @@
 package com.antigua.mytelegram.ui.fragments.single_chat
 
+import android.app.Activity
+import android.content.Intent
+import android.util.Log
 import android.view.View
 import android.widget.AbsListView
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.antigua.mytelegram.R
@@ -11,7 +15,9 @@ import com.antigua.mytelegram.ui.fragments.BaseFragment
 import com.antigua.mytelegram.utilits.*
 import com.antigua.mytelegram.utilits.AppConstants.APP_ACTIVITY
 import com.google.firebase.database.DatabaseReference
+import com.theartofdev.edmodo.cropper.CropImage
 import kotlinx.android.synthetic.main.activity_main.view.*
+import kotlinx.android.synthetic.main.fragment_settings.*
 import kotlinx.android.synthetic.main.fragment_single_chat.*
 import kotlinx.android.synthetic.main.toolbar_info.view.*
 
@@ -29,14 +35,37 @@ class SingleChatFragment(private val contact: CommonModel) : BaseFragment(R.layo
     private var mIsScrolling = false
     private var mSmoothScrollToPosition = true
     private lateinit var mSwipeRefreshLayout: SwipeRefreshLayout
+    private lateinit var mLayoutManager: LinearLayoutManager
 
 
     override fun onResume() {
         super.onResume()
-        mSwipeRefreshLayout = chat_swipe_refresh
+        initFields()
         initToolbar()
         initRecycleView()
+    }
 
+    private fun initFields() {
+        mSwipeRefreshLayout = chat_swipe_refresh
+        mLayoutManager =  LinearLayoutManager(this.context)
+        chat_input_message.addTextChangedListener(AppTextWatcher{
+            val string = chat_input_message.text.toString()
+            if(string.isEmpty()){
+                chat_btn_send_message.visibility = View.GONE
+                chat_btn_attach.visibility = View.VISIBLE
+            } else {
+                chat_btn_send_message.visibility = View.VISIBLE
+                chat_btn_attach.visibility = View.GONE
+            }
+        })
+        chat_btn_attach.setOnClickListener { attachFile() }
+    }
+
+    private fun attachFile() {
+        CropImage.activity()
+            .setAspectRatio(1,1)
+            .setRequestedSize(600,600)
+            .start(APP_ACTIVITY,this)
     }
 
     private fun initRecycleView() {
@@ -47,21 +76,28 @@ class SingleChatFragment(private val contact: CommonModel) : BaseFragment(R.layo
             .child(CURRENT_UID)
             .child(contact.id)
         mRecyclerView.adapter = mAdapter
-
+        mRecyclerView.setHasFixedSize(true)
+        mRecyclerView.isNestedScrollingEnabled =false
+        mRecyclerView.layoutManager =  mLayoutManager
         mMessageListener = AppChildEventListener {
-            mAdapter.addItem(it.getCommonModel(),mSmoothScrollToPosition){
-                if(mSmoothScrollToPosition){
-                    mRecyclerView.smoothScrollToPosition(mAdapter.itemCount)
-                }
-                mSwipeRefreshLayout.isRefreshing = false
-            }
+          val message  = it.getCommonModel()
 
+           if (mSmoothScrollToPosition){
+               mAdapter.addItemToBottom(message){
+                   mRecyclerView.smoothScrollToPosition(mAdapter.itemCount)
+               }
+           } else {
+               mAdapter.addItemToTop(message){
+                   mSwipeRefreshLayout.isRefreshing = false
+               }
+           }
         }
 
         mRefMessages.limitToLast(mCountMessages).addChildEventListener(mMessageListener)
 
 
         mRecyclerView.addOnScrollListener(object :RecyclerView.OnScrollListener(){
+
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)
                 if(newState == AbsListView.OnScrollListener.SCROLL_STATE_TOUCH_SCROLL){
@@ -71,7 +107,8 @@ class SingleChatFragment(private val contact: CommonModel) : BaseFragment(R.layo
 
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
-                if(mIsScrolling && dy<0){
+
+                if(mIsScrolling && dy<0 && mLayoutManager.findFirstVisibleItemPosition() <=3 ){
                     updateData()
                 }
             }
@@ -127,6 +164,29 @@ class SingleChatFragment(private val contact: CommonModel) : BaseFragment(R.layo
         mRefUser.removeEventListener(mListenerInfoToolbar)
         mRefMessages.removeEventListener(mMessageListener)
     }
+    @Deprecated("Deprecated in Java")
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE
+            && resultCode == Activity.RESULT_OK && data != null){
+            Log.d("MyLog","CropImage -> RESULT_OK")
+            val uri = CropImage.getActivityResult(data).uri
+            val messageKey = REF_DATABASE_ROOT.child(NODE_MESSAGES).child(CURRENT_UID)
+                .child(contact.id).push().key.toString()
+
+            val path = REF_STORAGE_ROOT
+                .child(FOLDER_MESSAGE_IMAGE)
+                .child(messageKey)
+            Log.d("MyLog","path  -> $path")
+            putImageToStorage(uri,path){
+                getUrlFromStorage(path){
+                    sendMessageAsImage(contact.id,it,messageKey)
+                }
+            }
+        }
+    }
+
+
 }
 
 

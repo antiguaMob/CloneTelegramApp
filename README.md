@@ -172,9 +172,26 @@
 //Урок 43. Организуем плавную дозагрузку данных из Firebase. 
 //https://www.youtube.com/watch?v=oF3TrSeGdSU&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=24
 
-//Урок 45. Упростим код и  исправим баг, при котором нельзя было подгрузить данные если 
+//Урок 44. Упростим код и  исправим баг, при котором нельзя было подгрузить данные если 
 //         отсутствовала прокрутка списка c помощью SwipeRefreshLayout.
 //https://www.youtube.com/watch?v=ccewOjtMX04&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=22
+
+//Урок 45. Продолжим заниматься оптимизацией RecyclerView. Исправим ошибку дублирования сообщений.
+//         Сделаем небольшой рефакторинг. Разберём как работает RecyclerView, создадим LayoutManger. 
+//         Сократим количество запросов в базу данных.
+//https://www.youtube.com/watch?v=t2AVOmARpS4&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=21
+
+//Урок 46. Реализуем отправку картинок в облачное хранилище и в базу данных.
+//https://www.youtube.com/watch?v=YVtf-RnOVkU&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=20
+
+
+
+
+
+
+
+
+
 
 
 
