@@ -187,9 +187,14 @@
 //Урок 47. Реализуем отображение картинок в чате.
 //https://www.youtube.com/watch?v=35qeRid90Jk&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=19
 
+//Урок 47. Начнем реализовывать голосовые сообщения. 
+//https://www.youtube.com/watch?v=Q_xOgenE4-M&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=18
 
+//Урок 48. Начнем реализовывать голосовые сообщения.
+//https://www.youtube.com/watch?v=Q_xOgenE4-M&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=19
 
-
+//Урок 49.  Продолжаем работать над  голосовыми сообщениями.
+//https://www.youtube.com/watch?v=vctiXmIAUIU&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=18
 
 
 
