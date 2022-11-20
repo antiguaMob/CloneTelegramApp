@@ -172,6 +172,10 @@
 //Урок 43. Организуем плавную дозагрузку данных из Firebase. 
 //https://www.youtube.com/watch?v=oF3TrSeGdSU&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=24
 
+//Урок 45. Упростим код и  исправим баг, при котором нельзя было подгрузить данные если 
+//         отсутствовала прокрутка списка c помощью SwipeRefreshLayout.
+//https://www.youtube.com/watch?v=ccewOjtMX04&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=22
+
 
 
 

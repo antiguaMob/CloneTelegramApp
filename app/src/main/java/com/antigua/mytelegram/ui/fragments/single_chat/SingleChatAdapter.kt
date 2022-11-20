@@ -5,19 +5,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.DiffUtil.DiffResult
 import androidx.recyclerview.widget.RecyclerView
 import com.antigua.mytelegram.R
 import com.antigua.mytelegram.models.CommonModel
 import com.antigua.mytelegram.utilits.CURRENT_UID
-import com.antigua.mytelegram.utilits.DiffUtilCallback
 import com.antigua.mytelegram.utilits.asTime
 import kotlinx.android.synthetic.main.message_item.view.*
 
 class SingleChatAdapter : RecyclerView.Adapter<SingleChatAdapter.SingleChatHolder>() {
 
-    private var mListMessagesCache = emptyList<CommonModel>()
+    private var mListMessagesCache = mutableListOf<CommonModel>()
     private lateinit var mDiffResult: DiffResult
 
     class SingleChatHolder(view: View) : RecyclerView.ViewHolder(view){
@@ -56,14 +54,23 @@ class SingleChatAdapter : RecyclerView.Adapter<SingleChatAdapter.SingleChatHolde
 
     override fun getItemCount(): Int = mListMessagesCache.size
 
-    fun addItem(item: CommonModel){
-        val newList = mutableListOf<CommonModel>()
-        newList.addAll(mListMessagesCache)
-        if(!newList.contains(item)){ newList.add(item) }
-        newList.sortBy { it.timeStamp.toString() }
-        mDiffResult = DiffUtil.calculateDiff(DiffUtilCallback(mListMessagesCache,newList))
-        mDiffResult.dispatchUpdatesTo(this)
-        mListMessagesCache = newList
+    fun addItem(item: CommonModel,
+                toBottom: Boolean,
+                onSuccess: ()->Unit
+    ){
+        if(toBottom){
+            if (!mListMessagesCache.contains(item)){
+                mListMessagesCache.add(item)
+                notifyItemInserted(mListMessagesCache.size)
+            }
+        }else {
+            if (!mListMessagesCache.contains(item)){
+                mListMessagesCache.add(item)
+                mListMessagesCache.sortBy { it.timeStamp.toString() }
+                notifyItemInserted(0)
+            }
+        }
+        onSuccess()
     }
 }
 
