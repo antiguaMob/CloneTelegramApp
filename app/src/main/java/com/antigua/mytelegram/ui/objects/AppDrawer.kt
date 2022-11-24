@@ -9,7 +9,7 @@ import com.antigua.mytelegram.R
 import com.antigua.mytelegram.ui.fragments.ContactsFragment
 import com.antigua.mytelegram.ui.fragments.SettingsFragment
 import com.antigua.mytelegram.utilits.AppConstants.APP_ACTIVITY
-import com.antigua.mytelegram.utilits.USER
+import com.antigua.mytelegram.database.USER
 import com.antigua.mytelegram.utilits.downloadAndSetImage
 import com.antigua.mytelegram.utilits.replaceFragment
 import com.mikepenz.materialdrawer.AccountHeader

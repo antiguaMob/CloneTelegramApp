@@ -11,7 +11,7 @@ import com.antigua.mytelegram.R
 import com.antigua.mytelegram.models.CommonModel
 import com.antigua.mytelegram.utilits.AppConstants.TYPE_MESSAGE_IMAGE
 import com.antigua.mytelegram.utilits.AppConstants.TYPE_MESSAGE_TEXT
-import com.antigua.mytelegram.utilits.CURRENT_UID
+import com.antigua.mytelegram.database.CURRENT_UID
 import com.antigua.mytelegram.utilits.asTime
 import com.antigua.mytelegram.utilits.downloadAndSetImage
 import kotlinx.android.synthetic.main.message_item.view.*

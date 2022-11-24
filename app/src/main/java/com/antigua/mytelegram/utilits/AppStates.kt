@@ -1,5 +1,7 @@
 package com.antigua.mytelegram.utilits
 
+import com.antigua.mytelegram.database.*
+
 enum class AppStates(val state: String  ) {
     ONLINE("в сети"),
     OFFLINE("был недавно"),

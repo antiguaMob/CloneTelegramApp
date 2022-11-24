@@ -1,7 +1,8 @@
 package com.antigua.mytelegram.ui.fragments
 
 import com.antigua.mytelegram.R
-import com.antigua.mytelegram.utilits.*
+import com.antigua.mytelegram.database.USER
+import com.antigua.mytelegram.database.setBioToDatabase
 import kotlinx.android.synthetic.main.fragment_change_bio.*
 
 

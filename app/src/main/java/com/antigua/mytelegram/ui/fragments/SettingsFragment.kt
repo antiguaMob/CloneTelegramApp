@@ -7,6 +7,7 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import com.antigua.mytelegram.R
+import com.antigua.mytelegram.database.*
 import com.antigua.mytelegram.utilits.*
 import com.antigua.mytelegram.utilits.AppConstants.APP_ACTIVITY
 import com.theartofdev.edmodo.cropper.CropImage
@@ -79,7 +80,7 @@ class SettingsFragment :  BaseFragment(R.layout.fragment_settings) {
             val path = REF_STORAGE_ROOT.child(FOLDER_PROFILE_IMAGE)
                 .child(CURRENT_UID)
             Log.d("MyLog","path  -> $path")
-            putImageToStorage(uri,path){
+            putFileToStorage(uri,path){
                 getUrlFromStorage(path){
                     putUrlToDatabase(it){
                         Log.d("MyLog","Set photo  -> $it")

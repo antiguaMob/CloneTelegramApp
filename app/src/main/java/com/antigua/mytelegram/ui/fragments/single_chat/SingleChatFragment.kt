@@ -13,11 +13,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.antigua.mytelegram.R
+import com.antigua.mytelegram.database.*
 import com.antigua.mytelegram.models.CommonModel
 import com.antigua.mytelegram.models.UserModel
 import com.antigua.mytelegram.ui.fragments.BaseFragment
 import com.antigua.mytelegram.utilits.*
 import com.antigua.mytelegram.utilits.AppConstants.APP_ACTIVITY
+import com.antigua.mytelegram.utilits.AppConstants.TYPE_MESSAGE_IMAGE
+import com.antigua.mytelegram.utilits.AppConstants.TYPE_MESSAGE_VOICE
 import com.google.firebase.database.DatabaseReference
 import com.theartofdev.edmodo.cropper.CropImage
 import kotlinx.android.synthetic.main.activity_main.view.*
@@ -91,7 +94,8 @@ class SingleChatFragment(private val contact: CommonModel) : BaseFragment(R.layo
                         chat_input_message.setText("")
                         chat_btn_voice.colorFilter = null
                         mAppVoiceRecorder.stopRecord{ file,messageKey ->
-                            uploadFileToStorage(Uri.fromFile(file),messageKey)
+                            uploadFileToStorage(Uri.fromFile(file), messageKey,contact.id, TYPE_MESSAGE_VOICE)
+                            mSmoothScrollToPosition = true
                         }
                     }
                 }
@@ -99,8 +103,6 @@ class SingleChatFragment(private val contact: CommonModel) : BaseFragment(R.layo
             }
         }
     }
-
-
 
     private fun attachFile() {
         CropImage.activity()
@@ -213,17 +215,8 @@ class SingleChatFragment(private val contact: CommonModel) : BaseFragment(R.layo
             Log.d("MyLog","CropImage -> RESULT_OK")
             val uri = CropImage.getActivityResult(data).uri
             val messageKey = getMessageKey(contact.id)
-
-            val path = REF_STORAGE_ROOT
-                .child(FOLDER_MESSAGE_IMAGE)
-                .child(messageKey)
-            Log.d("MyLog","path  -> $path")
-            putImageToStorage(uri,path){
-                getUrlFromStorage(path){
-                    sendMessageAsImage(contact.id,it,messageKey)
-                    mSmoothScrollToPosition = true
-                }
-            }
+            uploadFileToStorage(uri, messageKey,contact.id, TYPE_MESSAGE_IMAGE)
+            mSmoothScrollToPosition = true
         }
     }
 

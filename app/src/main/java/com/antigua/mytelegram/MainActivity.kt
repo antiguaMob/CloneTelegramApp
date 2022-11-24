@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
+import com.antigua.mytelegram.database.AUTH
+import com.antigua.mytelegram.database.initFirebase
+import com.antigua.mytelegram.database.initUser
 import com.antigua.mytelegram.databinding.ActivityMainBinding
 import com.antigua.mytelegram.ui.fragments.MainFragment
 import com.antigua.mytelegram.ui.fragments.register.EnterPhoneNumberFragment

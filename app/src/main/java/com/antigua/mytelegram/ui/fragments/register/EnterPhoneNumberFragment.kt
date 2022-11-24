@@ -2,6 +2,7 @@ package com.antigua.mytelegram.ui.fragments.register
 
 import android.util.Log
 import com.antigua.mytelegram.R
+import com.antigua.mytelegram.database.AUTH
 import com.antigua.mytelegram.ui.fragments.BaseFragment
 import com.antigua.mytelegram.utilits.*
 import com.antigua.mytelegram.utilits.AppConstants.APP_ACTIVITY
