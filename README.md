@@ -204,6 +204,7 @@
 //         Так же создадим для каждого типа сообщения отдельный Holder.
 //https://www.youtube.com/watch?v=l5p3qzVCgnM&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=15
 
-
+//Урок 52.  Реализуем отображение голосовых сообщений.
+//https://www.youtube.com/watch?v=htkrU1WcNMU&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=15
 
 

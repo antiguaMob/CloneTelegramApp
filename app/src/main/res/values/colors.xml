@@ -8,7 +8,7 @@
     <color name="colorBlack">#FF000000</color>
     <color name="colorGreen">#80BD7A</color>
     <color name="colorBlueWish">#6DB2EC</color>
-
+    <color name="colorGreenDark">#2C5D28</color>
 
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
@@ -17,6 +17,7 @@
     <color name="colorAccent">#FFFFFFFF</color>
     <color name="colorAccentDark">#A9A9A9</color>
     <color name="colorGray">#837E7E</color>
+
 
     <!-- Material DEFAULT colors -->
     <color name="material_drawer_primary">#2196F3</color>
