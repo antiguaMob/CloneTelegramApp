@@ -1,4 +1,4 @@
-package com.antigua.mytelegram.ui.fragments.single_chat
+package com.antigua.mytelegram.ui.screens.single_chat
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -16,8 +16,8 @@ import com.antigua.mytelegram.R
 import com.antigua.mytelegram.database.*
 import com.antigua.mytelegram.models.CommonModel
 import com.antigua.mytelegram.models.UserModel
-import com.antigua.mytelegram.ui.fragments.BaseFragment
-import com.antigua.mytelegram.ui.fragments.message_recycler_view.views.AppViewFactory
+import com.antigua.mytelegram.ui.screens.BaseFragment
+import com.antigua.mytelegram.ui.message_recycler_view.views.AppViewFactory
 import com.antigua.mytelegram.utilits.*
 import com.antigua.mytelegram.utilits.AppConstants.APP_ACTIVITY
 import com.antigua.mytelegram.utilits.AppConstants.TYPE_MESSAGE_IMAGE

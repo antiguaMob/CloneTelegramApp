@@ -1,4 +1,4 @@
-package com.antigua.mytelegram.ui.fragments.message_recycler_view.views
+package com.antigua.mytelegram.ui.message_recycler_view.views
 
 class ViewTextMessage(
     override val id: String,
@@ -8,9 +8,9 @@ class ViewTextMessage(
     override val text: String
 ) : MessageView {
     override fun getTypeView(): Int {
-        return  MessageView.MESSAGE_TEXT
+        return MessageView.MESSAGE_TEXT
     }
     override fun equals(other: Any?): Boolean {
-        return (other as  MessageView).id == id
+        return (other as MessageView).id == id
     }
 }

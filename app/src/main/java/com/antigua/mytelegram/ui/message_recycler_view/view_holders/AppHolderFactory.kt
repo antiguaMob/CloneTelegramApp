@@ -1,10 +1,10 @@
-package com.antigua.mytelegram.ui.fragments.message_recycler_view.view_holders
+package com.antigua.mytelegram.ui.message_recycler_view.view_holders
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.antigua.mytelegram.R
-import com.antigua.mytelegram.ui.fragments.message_recycler_view.views.MessageView
+import com.antigua.mytelegram.ui.message_recycler_view.views.MessageView
 
 class AppHolderFactory {
 

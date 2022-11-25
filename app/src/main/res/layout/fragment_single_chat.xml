@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.fragments.single_chat.SingleChatFragment">
+    tools:context=".ui.screens.single_chat.SingleChatFragment">
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
        android:id="@+id/chat_swipe_refresh"
@@ -19,7 +19,7 @@
             android:id="@+id/chat_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            tools:listitem="@layout/message_item"
+            tools:listitem="@layout/message_item_text"
             android:background="@color/colorBlueWish" />
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

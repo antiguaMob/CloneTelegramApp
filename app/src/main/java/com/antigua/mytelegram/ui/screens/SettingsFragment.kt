@@ -1,4 +1,4 @@
-package com.antigua.mytelegram.ui.fragments
+package com.antigua.mytelegram.ui.screens
 
 import android.app.Activity.RESULT_OK
 import android.content.Intent

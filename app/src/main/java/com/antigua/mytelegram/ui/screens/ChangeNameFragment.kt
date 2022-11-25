@@ -1,4 +1,4 @@
-package com.antigua.mytelegram.ui.fragments
+package com.antigua.mytelegram.ui.screens
 
 import com.antigua.mytelegram.R
 import com.antigua.mytelegram.database.USER

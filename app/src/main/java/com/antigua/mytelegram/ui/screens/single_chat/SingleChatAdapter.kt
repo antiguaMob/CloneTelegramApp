@@ -1,12 +1,9 @@
-package com.antigua.mytelegram.ui.fragments.single_chat
+package com.antigua.mytelegram.ui.screens.single_chat
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.antigua.mytelegram.ui.fragments.message_recycler_view.view_holders.AppHolderFactory
-import com.antigua.mytelegram.ui.fragments.message_recycler_view.view_holders.HolderImageMessage
-import com.antigua.mytelegram.ui.fragments.message_recycler_view.view_holders.HolderTextMessage
-import com.antigua.mytelegram.ui.fragments.message_recycler_view.view_holders.HolderVoiceMessage
-import com.antigua.mytelegram.ui.fragments.message_recycler_view.views.MessageView
+import com.antigua.mytelegram.ui.message_recycler_view.view_holders.*
+import com.antigua.mytelegram.ui.message_recycler_view.views.MessageView
 
 class SingleChatAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -21,12 +18,7 @@ class SingleChatAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        when(holder){
-            is HolderImageMessage ->holder.drawMessageImage(holder,mListMessagesCache[position])
-            is HolderTextMessage ->holder.drawMessageText(holder,mListMessagesCache[position])
-            is HolderVoiceMessage ->holder.drawMessageVoice(holder,mListMessagesCache[position])
-            else -> {}
-        }
+        (holder as MessageHolder).drawMessage(mListMessagesCache[position])
     }
 
     override fun getItemCount(): Int = mListMessagesCache.size

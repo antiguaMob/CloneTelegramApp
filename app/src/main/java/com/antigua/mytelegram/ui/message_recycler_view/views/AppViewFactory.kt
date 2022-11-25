@@ -1,4 +1,4 @@
-package com.antigua.mytelegram.ui.fragments.message_recycler_view.views
+package com.antigua.mytelegram.ui.message_recycler_view.views
 
 import com.antigua.mytelegram.models.CommonModel
 import com.antigua.mytelegram.utilits.AppConstants.TYPE_MESSAGE_IMAGE
@@ -6,7 +6,7 @@ import com.antigua.mytelegram.utilits.AppConstants.TYPE_MESSAGE_VOICE
 
 class AppViewFactory {
     companion object{
-        fun getView(message: CommonModel): MessageView{
+        fun getView(message: CommonModel): MessageView {
             return  when(message.type){
                 TYPE_MESSAGE_IMAGE -> ViewImageMessage(
                     message.id,

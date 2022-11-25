@@ -1,4 +1,4 @@
-package com.antigua.mytelegram.ui.fragments
+package com.antigua.mytelegram.ui.screens
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.antigua.mytelegram.R
 import com.antigua.mytelegram.database.*
 import com.antigua.mytelegram.models.CommonModel
-import com.antigua.mytelegram.ui.fragments.single_chat.SingleChatFragment
+import com.antigua.mytelegram.ui.screens.single_chat.SingleChatFragment
 import com.antigua.mytelegram.utilits.*
 import com.antigua.mytelegram.utilits.AppConstants.APP_ACTIVITY
 import com.firebase.ui.database.FirebaseRecyclerAdapter

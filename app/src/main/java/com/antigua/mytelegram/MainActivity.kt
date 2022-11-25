@@ -9,8 +9,8 @@ import com.antigua.mytelegram.database.AUTH
 import com.antigua.mytelegram.database.initFirebase
 import com.antigua.mytelegram.database.initUser
 import com.antigua.mytelegram.databinding.ActivityMainBinding
-import com.antigua.mytelegram.ui.fragments.MainFragment
-import com.antigua.mytelegram.ui.fragments.register.EnterPhoneNumberFragment
+import com.antigua.mytelegram.ui.screens.MainFragment
+import com.antigua.mytelegram.ui.screens.register.EnterPhoneNumberFragment
 import com.antigua.mytelegram.ui.objects.AppDrawer
 import com.antigua.mytelegram.utilits.*
 import com.antigua.mytelegram.utilits.AppConstants.APP_ACTIVITY
