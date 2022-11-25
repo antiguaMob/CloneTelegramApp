@@ -200,6 +200,9 @@
 //Урок 50.  Продолжаем работать над  голосовыми сообщениями.
 //https://www.youtube.com/watch?v=KAMhwNhdyLk&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=16
 
+//Урок 51. Разделим наше общий кастомный макет на отдельныe макеты для каждого типа сообщения.
+//         Так же создадим для каждого типа сообщения отдельный Holder.
+//https://www.youtube.com/watch?v=l5p3qzVCgnM&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=15
 
 
 
