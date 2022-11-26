@@ -217,7 +217,8 @@
 //Урок 55. Реализуем отображение файловых сообщений в чате. Научимся получать имя файла по URI.
 // https://www.youtube.com/watch?v=YocJo-cqFoY&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=11
 
-
+//Урок 56. начнем реализовывать главный экран приложения. 
+//https://www.youtube.com/watch?v=nV4Yt1iNSMw&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=10
 
 
 

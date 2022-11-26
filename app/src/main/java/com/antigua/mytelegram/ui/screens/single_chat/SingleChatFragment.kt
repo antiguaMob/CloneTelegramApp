@@ -20,6 +20,7 @@ import com.antigua.mytelegram.ui.screens.BaseFragment
 import com.antigua.mytelegram.utilits.*
 import com.antigua.mytelegram.utilits.AppConstants.APP_ACTIVITY
 import com.antigua.mytelegram.utilits.AppConstants.PICK_FILE_REQUEST_CODE
+import com.antigua.mytelegram.utilits.AppConstants.TYPE_CHAT
 import com.antigua.mytelegram.utilits.AppConstants.TYPE_MESSAGE_FILE
 import com.antigua.mytelegram.utilits.AppConstants.TYPE_MESSAGE_IMAGE
 import com.antigua.mytelegram.utilits.AppConstants.TYPE_MESSAGE_VOICE
@@ -92,13 +93,11 @@ class SingleChatFragment(private val contact: CommonModel) : BaseFragment(R.layo
             chat_btn_voice.setOnTouchListener { v, event ->
                 if(checkPermission(RECORD_AUDIO)){
                     if(event.action == MotionEvent.ACTION_DOWN){
-                        //TODO record
                         chat_input_message.setText("Запись")
                         chat_btn_voice.setColorFilter(ContextCompat.getColor(APP_ACTIVITY,R.color.colorPrimary))
                         val messageKey = getMessageKey(contact.id)
                         mAppVoiceRecorder.startRecord(messageKey)
                     } else if(event.action == MotionEvent.ACTION_UP){
-                        //TODO stop record
                         chat_input_message.setText("")
                         chat_btn_voice.colorFilter = null
                         mAppVoiceRecorder.stopRecord{ file,messageKey ->
@@ -206,10 +205,13 @@ class SingleChatFragment(private val contact: CommonModel) : BaseFragment(R.layo
             } else {
                 sendMessage(message, contact.id, TYPE_TEXT) {
                     chat_input_message.setText("")
+                      saveToMainList(contact.id, TYPE_CHAT)
                 }
             }
         }
     }
+
+
 
     private fun initInfoToolbar() {
         if (mReceivingUser.fullname.isEmpty()){
