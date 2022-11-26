@@ -210,5 +210,15 @@
 //Урок 53. Полностью реализуем прослушивание голосовых сообщений. 
 //https://www.youtube.com/watch?v=vMxKde2Adwo&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=13
 
+//Урок 54. Реализуем отправку голосовых сообщений в чат. Сохранение файла в хранилище и 
+//         сообщения в базе данных.
+//https://www.youtube.com/watch?v=dV7fAl2aH4E&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=12
+
+
+
+
+
+
+
 
 
