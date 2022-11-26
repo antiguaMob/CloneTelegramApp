@@ -220,6 +220,13 @@
 //Урок 56. начнем реализовывать главный экран приложения. 
 //https://www.youtube.com/watch?v=nV4Yt1iNSMw&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=10
 
+//Урок 57. Реализация главного экрана приложения. Часть 2
+//https://www.youtube.com/watch?v=Qe0eraR_zTM&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=9
+
+
+
+
+
 
 
 
