@@ -11,12 +11,12 @@ import kotlinx.android.synthetic.main.message_item_text.view.*
 
 class HolderTextMessage(view: View): RecyclerView.ViewHolder(view),MessageHolder {
     //Text
-    val blockUserMessage : ConstraintLayout = view.block_user_message
-    val chatUserMessage : TextView = view.chat_user_message
-    val chatUserMessageTime : TextView = view.chat_user_massage_time
-    val blockReceivedMessage : ConstraintLayout = view.block_received_message
-    val chatReceivedMessage : TextView = view.chat_received_message
-    val chatReceivedMessageTime : TextView = view.chat_received_massage_time
+    private val blockUserMessage : ConstraintLayout = view.block_user_message
+    private val chatUserMessage : TextView = view.chat_user_message
+    private val chatUserMessageTime : TextView = view.chat_user_massage_time
+    private val blockReceivedMessage : ConstraintLayout = view.block_received_message
+    private val chatReceivedMessage : TextView = view.chat_received_message
+    private val chatReceivedMessageTime : TextView = view.chat_received_massage_time
 
     override fun drawMessage(view: MessageView) {
         if(view.from == CURRENT_UID){
@@ -32,5 +32,12 @@ class HolderTextMessage(view: View): RecyclerView.ViewHolder(view),MessageHolder
             chatReceivedMessageTime.text =
                 view.timeStamp.asTime()
         }
+    }
+    override fun onAttach(view: MessageView) {
+
+    }
+
+    override fun onDetach() {
+
     }
 }

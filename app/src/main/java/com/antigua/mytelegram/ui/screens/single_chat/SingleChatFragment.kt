@@ -60,6 +60,7 @@ class SingleChatFragment(private val contact: CommonModel) : BaseFragment(R.layo
     override fun onDestroy() {
         super.onDestroy()
         mAppVoiceRecorder.releaseRecorder()
+        mAdapter.onDestroy()
     }
 
     @SuppressLint("ClickableViewAccessibility")

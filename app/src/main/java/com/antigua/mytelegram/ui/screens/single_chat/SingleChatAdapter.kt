@@ -8,6 +8,7 @@ import com.antigua.mytelegram.ui.message_recycler_view.views.MessageView
 class SingleChatAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private var mListMessagesCache = mutableListOf<MessageView>()
+    private var mListHolders = mutableListOf<MessageHolder>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return  AppHolderFactory.getHolder(parent,viewType)
@@ -20,6 +21,19 @@ class SingleChatAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         (holder as MessageHolder).drawMessage(mListMessagesCache[position])
     }
+
+    override fun onViewAttachedToWindow(holder: RecyclerView.ViewHolder) {
+        (holder as MessageHolder).onAttach(mListMessagesCache[holder.adapterPosition])
+        mListHolders.add(holder as MessageHolder)
+        super.onViewAttachedToWindow(holder)
+    }
+
+    override fun onViewDetachedFromWindow(holder: RecyclerView.ViewHolder) {
+        (holder as MessageHolder).onDetach()
+        mListHolders.remove(holder as MessageHolder)
+        super.onViewDetachedFromWindow(holder)
+    }
+
 
     override fun getItemCount(): Int = mListMessagesCache.size
 
@@ -44,6 +58,12 @@ class SingleChatAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             notifyItemInserted(0)
         }
         onSuccess()
+    }
+
+    fun onDestroy() {
+        mListHolders.forEach{
+            it.onDetach()
+        }
     }
 }
 

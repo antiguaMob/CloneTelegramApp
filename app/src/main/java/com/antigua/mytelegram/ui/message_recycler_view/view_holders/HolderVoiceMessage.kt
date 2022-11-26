@@ -7,21 +7,24 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.antigua.mytelegram.database.CURRENT_UID
 import com.antigua.mytelegram.ui.message_recycler_view.views.MessageView
+import com.antigua.mytelegram.utilits.AppVoicePlayer
 import com.antigua.mytelegram.utilits.asTime
 import kotlinx.android.synthetic.main.message_item_voice.view.*
 
 class HolderVoiceMessage(view: View): RecyclerView.ViewHolder(view) ,MessageHolder {
     //Voice
-    val blockReceivedVoiceMessage: ConstraintLayout = view.block_received_voice_message
-    val blockUserVoiceMessage: ConstraintLayout = view.block_user_voice_message
-    val chatUserVoiceMessageTime: TextView = view.chat_user_voice_massage_time
-    val chatReceivedVoiceMessageTime: TextView = view.chat_received_voice_massage_time
+    private val mAppVoicePlayer = AppVoicePlayer()
 
-    val chatReceivedBtnPlay: ImageView = view.chat_received_btn_play
-    val chatReceivedBtnStop: ImageView = view.chat_received_btn_stop
+    private val blockReceivedVoiceMessage: ConstraintLayout = view.block_received_voice_message
+    private val blockUserVoiceMessage: ConstraintLayout = view.block_user_voice_message
+    private val chatUserVoiceMessageTime: TextView = view.chat_user_voice_massage_time
+    private val chatReceivedVoiceMessageTime: TextView = view.chat_received_voice_massage_time
 
-    val chatUserBtnPlay: ImageView = view.chat_user_btn_play
-    val chatUserBtnStop: ImageView = view.chat_user_btn_stop
+    private val chatReceivedBtnPlay: ImageView = view.chat_received_btn_play
+    private val chatReceivedBtnStop: ImageView = view.chat_received_btn_stop
+
+    private val chatUserBtnPlay: ImageView = view.chat_user_btn_play
+    private val chatUserBtnStop: ImageView = view.chat_user_btn_stop
 
 
     override fun drawMessage(view: MessageView) {
@@ -34,5 +37,58 @@ class HolderVoiceMessage(view: View): RecyclerView.ViewHolder(view) ,MessageHold
             blockUserVoiceMessage.visibility = View.GONE
             chatReceivedVoiceMessageTime.text = view.timeStamp.asTime()
         }
+    }
+    override fun onAttach(view: MessageView) {
+        mAppVoicePlayer.init()
+        if(view.from == CURRENT_UID){
+            chatUserBtnPlay.setOnClickListener {
+                chatUserBtnPlay.visibility = View.GONE
+                chatUserBtnStop.visibility = View.VISIBLE
+                chatUserBtnStop.setOnClickListener {
+                    stop {
+                        chatUserBtnStop.setOnClickListener(null)
+                        chatUserBtnPlay.visibility = View.VISIBLE
+                        chatUserBtnStop.visibility = View.GONE
+                    }
+                }
+                play(view){
+                    chatUserBtnPlay.visibility = View.VISIBLE
+                    chatUserBtnStop.visibility = View.GONE
+                }
+            }
+        }  else {
+            chatReceivedBtnPlay.setOnClickListener {
+                chatReceivedBtnPlay.visibility = View.GONE
+                chatReceivedBtnStop.visibility = View.VISIBLE
+                chatReceivedBtnStop.setOnClickListener {
+                    stop {
+                        chatReceivedBtnStop.setOnClickListener(null)
+                        chatReceivedBtnPlay.visibility = View.VISIBLE
+                        chatReceivedBtnStop.visibility = View.GONE
+                    }
+                }
+                play(view){
+                    chatReceivedBtnPlay.visibility = View.VISIBLE
+                    chatReceivedBtnStop.visibility = View.GONE
+                }
+            }
+        }
+    }
+
+    private fun play(view: MessageView, function: () -> Unit) {
+        mAppVoicePlayer.play(view.id,view.fileUrl){
+        function()
+        }
+    }
+
+    private fun stop( function: () -> Unit){
+        mAppVoicePlayer.stop {
+            function()
+        }
+    }
+    override fun onDetach() {
+        chatUserBtnPlay.setOnClickListener( null )
+        chatReceivedBtnPlay.setOnClickListener( null )
+        mAppVoicePlayer.release()
     }
 }

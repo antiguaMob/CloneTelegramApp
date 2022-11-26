@@ -13,12 +13,12 @@ import kotlinx.android.synthetic.main.message_item_image.view.*
 
 class HolderImageMessage(view: View): RecyclerView.ViewHolder(view),MessageHolder {
     //Image
-    val blockReceivedImageMessage: ConstraintLayout = view.block_received_image_message
-    val blockUserImageMessage: ConstraintLayout = view.block_user_image_message
-    val chatUserImage: ImageView =  view.chat_user_image
-    val chatReceivedImage: ImageView =  view.chat_received_image
-    val chatUserImageMessageTime: TextView = view.chat_user_image_massage_time
-    val chatReceivedImageMessageTime: TextView = view.chat_received_image_massage_time
+    private val blockReceivedImageMessage: ConstraintLayout = view.block_received_image_message
+    private val blockUserImageMessage: ConstraintLayout = view.block_user_image_message
+    private val chatUserImage: ImageView =  view.chat_user_image
+    private val chatReceivedImage: ImageView =  view.chat_received_image
+    private val chatUserImageMessageTime: TextView = view.chat_user_image_massage_time
+    private val chatReceivedImageMessageTime: TextView = view.chat_received_image_massage_time
 
     override fun drawMessage(view: MessageView) {
         if(view.from == CURRENT_UID){
@@ -32,5 +32,13 @@ class HolderImageMessage(view: View): RecyclerView.ViewHolder(view),MessageHolde
             chatReceivedImage.downloadAndSetImage(view.fileUrl)
             chatReceivedImageMessageTime.text = view.timeStamp.asTime()
         }
+    }
+
+    override fun onAttach(view: MessageView) {
+
+    }
+
+    override fun onDetach() {
+
     }
 }
