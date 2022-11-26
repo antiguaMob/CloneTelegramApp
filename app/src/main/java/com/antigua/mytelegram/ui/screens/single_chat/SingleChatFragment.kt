@@ -112,6 +112,7 @@ class SingleChatFragment(private val contact: CommonModel) : BaseFragment(R.layo
         }
     }
 
+    @SuppressLint("SuspiciousIndentation")
     private fun attach() {
       mBottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
         btn_attach_file.setOnClickListener { attachFile() }
@@ -241,16 +242,14 @@ class SingleChatFragment(private val contact: CommonModel) : BaseFragment(R.layo
                PICK_FILE_REQUEST_CODE -> {
                    val uri = data.data
                    val messageKey = getMessageKey(contact.id)
-                   uri?.let { uploadFileToStorage(it, messageKey,contact.id, TYPE_MESSAGE_FILE) }
+                   val filename = getFilenameFromUri(uri!!)
+                   uploadFileToStorage(uri, messageKey,contact.id, TYPE_MESSAGE_FILE ,filename)
                    mSmoothScrollToPosition = true
                }
            }
        }
 
     }
-
-
-
 
 }
 
