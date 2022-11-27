@@ -16,6 +16,7 @@ import com.antigua.mytelegram.models.CommonModel
 import com.antigua.mytelegram.models.UserModel
 import com.antigua.mytelegram.ui.message_recycler_view.views.AppViewFactory
 import com.antigua.mytelegram.ui.screens.BaseFragment
+import com.antigua.mytelegram.ui.screens.main_list.MainListFragment
 import com.antigua.mytelegram.utilits.*
 import com.antigua.mytelegram.utilits.AppConstants.APP_ACTIVITY
 import com.antigua.mytelegram.utilits.AppConstants.PICK_FILE_REQUEST_CODE
@@ -254,16 +255,26 @@ class SingleChatFragment(private val contact: CommonModel) : BaseFragment(R.layo
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        /* Создание выпадающего меню */
         activity?.menuInflater?.inflate(R.menu.single_chat_action_menu, menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         /* Слушатель выбора пунктов выпадающего меню */
         when(item.itemId){
-
+            R.id.menu_clear_chat-> clearChar(contact.id){
+                showToast("чат очищен")
+                replaceFragment(MainListFragment())
+            }
+            R.id.menu_delete_chat-> deleteChat(contact.id){
+               showToast("Чат удален")
+                replaceFragment(MainListFragment())
+            }
         }
         return  true
     }
+
+
 }
 
 

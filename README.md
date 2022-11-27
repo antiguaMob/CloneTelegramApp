@@ -226,6 +226,9 @@
 //Урок 58. Обработка кликов по элементам главного листа. Переход в одиночный чат.
 //https://www.youtube.com/watch?v=-oh_0RlWWfc&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=8
 
+//Урок 59. Очистка и удаление чата.
+//https://www.youtube.com/watch?v=vwyyu1tbRZI&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=7
+
 
 
 
