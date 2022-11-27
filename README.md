@@ -223,7 +223,8 @@
 //Урок 57. Реализация главного экрана приложения. Часть 2
 //https://www.youtube.com/watch?v=Qe0eraR_zTM&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=9
 
-
+//Урок 58. Обработка кликов по элементам главного листа. Переход в одиночный чат.
+//https://www.youtube.com/watch?v=-oh_0RlWWfc&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=8
 
 
 

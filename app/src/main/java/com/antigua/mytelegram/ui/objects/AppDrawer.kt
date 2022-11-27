@@ -7,7 +7,7 @@ import android.widget.ImageView
 import androidx.drawerlayout.widget.DrawerLayout
 import com.antigua.mytelegram.R
 import com.antigua.mytelegram.ui.screens.ContactsFragment
-import com.antigua.mytelegram.ui.screens.SettingsFragment
+import com.antigua.mytelegram.ui.screens.settings.SettingsFragment
 import com.antigua.mytelegram.utilits.AppConstants.APP_ACTIVITY
 import com.antigua.mytelegram.database.USER
 import com.antigua.mytelegram.utilits.downloadAndSetImage

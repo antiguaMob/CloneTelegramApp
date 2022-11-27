@@ -1,8 +1,9 @@
-package com.antigua.mytelegram.ui.screens
+package com.antigua.mytelegram.ui.screens.settings
 
 import com.antigua.mytelegram.R
 import com.antigua.mytelegram.database.USER
 import com.antigua.mytelegram.database.setNameToDatabase
+import com.antigua.mytelegram.ui.screens.BaseChangeFragment
 import com.antigua.mytelegram.utilits.*
 import kotlinx.android.synthetic.main.fragment_change_name.*
 
