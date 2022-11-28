@@ -229,6 +229,9 @@
 //Урок 59. Очистка и удаление чата.
 //https://www.youtube.com/watch?v=vwyyu1tbRZI&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=7
 
+//Урок 60. Реализация групп.
+//https://www.youtube.com/watch?v=PCzxapn1GYE&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=6
+
 
 
 

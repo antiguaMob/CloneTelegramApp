@@ -2,7 +2,7 @@ package com.antigua.mytelegram.ui.screens.register
 
 import com.antigua.mytelegram.R
 import com.antigua.mytelegram.database.*
-import com.antigua.mytelegram.ui.screens.BaseFragment
+import com.antigua.mytelegram.ui.screens.base.BaseFragment
 import com.antigua.mytelegram.utilits.*
 import com.antigua.mytelegram.utilits.AppConstants.APP_ACTIVITY
 import com.google.firebase.auth.PhoneAuthProvider

@@ -1,4 +1,4 @@
-package com.antigua.mytelegram.ui.screens
+package com.antigua.mytelegram.ui.screens.base
 
 
 import androidx.fragment.app.Fragment

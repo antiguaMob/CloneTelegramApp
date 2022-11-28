@@ -1,4 +1,4 @@
-package com.antigua.mytelegram.ui.screens
+package com.antigua.mytelegram.ui.screens.contacts
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.antigua.mytelegram.R
 import com.antigua.mytelegram.database.*
 import com.antigua.mytelegram.models.CommonModel
+import com.antigua.mytelegram.ui.screens.base.BaseFragment
 import com.antigua.mytelegram.ui.screens.single_chat.SingleChatFragment
 import com.antigua.mytelegram.utilits.*
 import com.antigua.mytelegram.utilits.AppConstants.APP_ACTIVITY
@@ -21,7 +22,7 @@ import kotlinx.android.synthetic.main.fragment_contacts.*
 class ContactsFragment : BaseFragment(R.layout.fragment_contacts) {
 
     private lateinit var mRecyclerView: RecyclerView
-    private lateinit var mAdapter: FirebaseRecyclerAdapter<CommonModel,ContactsHolder>
+    private lateinit var mAdapter: FirebaseRecyclerAdapter<CommonModel, ContactsHolder>
     private lateinit var mRefContacts: DatabaseReference
     private lateinit var mRefUsers: DatabaseReference
     private lateinit var mRefUserListener: AppValueEventListener
@@ -43,7 +44,7 @@ class ContactsFragment : BaseFragment(R.layout.fragment_contacts) {
             .build()
 
         /* Адаптер принимает данные , отображает в холдере */
-        mAdapter = object : FirebaseRecyclerAdapter<CommonModel,ContactsHolder> (options){
+        mAdapter = object : FirebaseRecyclerAdapter<CommonModel, ContactsHolder> (options){
 
             override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactsHolder {
                  /* Запускается тогда когда адаптер получает доступ к ViewGroup */
