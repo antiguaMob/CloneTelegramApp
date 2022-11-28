@@ -229,10 +229,11 @@
 //Урок 59. Очистка и удаление чата.
 //https://www.youtube.com/watch?v=vwyyu1tbRZI&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=7
 
-//Урок 60. Реализация групп.
+//Урок 60. Реализация групп. Часть 1
 //https://www.youtube.com/watch?v=PCzxapn1GYE&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=6
 
-
+//Урок 61. Реализация групп. Часть 2
+//https://www.youtube.com/watch?v=9NZVUBNGZg0&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=5
 
 
 
