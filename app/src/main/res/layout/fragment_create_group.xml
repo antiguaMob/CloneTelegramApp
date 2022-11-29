@@ -28,7 +28,7 @@
         android:layout_margin="@dimen/app_margin"/>
 
     <TextView
-        android:id="@+id/create_group_accounts"
+        android:id="@+id/create_group_counts"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/settings_text_account"
@@ -60,7 +60,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/create_group_accounts"
+        app:layout_constraintTop_toBottomOf="@+id/create_group_counts"
         tools:listitem="@layout/main_list_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

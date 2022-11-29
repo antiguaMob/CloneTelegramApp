@@ -14,25 +14,18 @@ class CreateGroupFragment(private var listContacts: List<CommonModel>): BaseFrag
     override fun onResume() {
         super.onResume()
         AppConstants.APP_ACTIVITY.title = getString(R.string.create_group)
-        AppConstants.APP_ACTIVITY.mAppDrawer.enableDrawer()
         hideKeyboard()
         initRecyclerView()
         create_group_btn_complete.setOnClickListener {
             showToast("Click")
         }
         crete_group_input_name.requestFocus()
-//        add_contacts_btn_next.setOnClickListener {
-//            AddContactsFragment.listContacts.forEach{
-//                replaceFragment(CreateGroupFragment(AddContactsFragment.listContacts))
-//            }
-//        }
+        create_group_counts.text = getPlurals(listContacts.size)
     }
 
     private fun initRecyclerView() {
         mRecyclerView = create_group_recycle_view
         mAdapter = AddContactsAdapter()
-
-
         mRecyclerView.adapter = mAdapter
         listContacts.forEach {
             mAdapter.updateListItems(it)

@@ -235,6 +235,9 @@
 //Урок 61. Реализация групп. Часть 2
 //https://www.youtube.com/watch?v=9NZVUBNGZg0&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=5
 
+//Урок 62. Учимся работать с plurals и quantity.
+//https://www.youtube.com/watch?v=nstNmY0Zjy8&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=4
+
 
 
 

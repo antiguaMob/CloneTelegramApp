@@ -1,17 +1,18 @@
 package com.antigua.mytelegram.ui.screens.groups
 
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.antigua.mytelegram.R
 import com.antigua.mytelegram.database.*
 import com.antigua.mytelegram.models.CommonModel
+import com.antigua.mytelegram.ui.screens.base.BaseFragment
 import com.antigua.mytelegram.utilits.AppConstants.APP_ACTIVITY
 import com.antigua.mytelegram.utilits.AppValueEventListener
 import com.antigua.mytelegram.utilits.hideKeyboard
 import com.antigua.mytelegram.utilits.replaceFragment
+import com.antigua.mytelegram.utilits.showToast
 import kotlinx.android.synthetic.main.fragment_add_contacts.*
 
-class AddContactsFragment : Fragment(R.layout.fragment_add_contacts) {
+class AddContactsFragment : BaseFragment(R.layout.fragment_add_contacts) {
 
     private lateinit var mRecyclerView: RecyclerView
     private lateinit var mAdapter: AddContactsAdapter
@@ -21,13 +22,15 @@ class AddContactsFragment : Fragment(R.layout.fragment_add_contacts) {
     private var mListItems = listOf<CommonModel>()
 
     override fun onResume() {
+        listContacts.clear()
         super.onResume()
         APP_ACTIVITY.title = "Добавить участника"
-        APP_ACTIVITY.mAppDrawer.enableDrawer()
         hideKeyboard()
         initRecyclerView()
         add_contacts_btn_next.setOnClickListener {
-            listContacts.forEach{
+            if(listContacts.isEmpty()) {
+                showToast("Добавьте учасника")
+            } else {
                 replaceFragment(CreateGroupFragment(listContacts))
             }
         }
