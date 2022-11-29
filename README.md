@@ -241,7 +241,8 @@
 //Урок 63. Реализация групп.
 //https://www.youtube.com/watch?v=w6bORaTUco4&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=3
 
-
+//Урок 64. Добавляем группу в главный лист при создании
+//https://www.youtube.com/watch?v=KoJlC3G_RcU&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=2
 
 
 
