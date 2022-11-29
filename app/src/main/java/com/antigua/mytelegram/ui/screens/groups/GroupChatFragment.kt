@@ -20,7 +20,6 @@ import com.antigua.mytelegram.ui.screens.main_list.MainListFragment
 import com.antigua.mytelegram.utilits.*
 import com.antigua.mytelegram.utilits.AppConstants.APP_ACTIVITY
 import com.antigua.mytelegram.utilits.AppConstants.PICK_FILE_REQUEST_CODE
-import com.antigua.mytelegram.utilits.AppConstants.TYPE_CHAT
 import com.antigua.mytelegram.utilits.AppConstants.TYPE_MESSAGE_FILE
 import com.antigua.mytelegram.utilits.AppConstants.TYPE_MESSAGE_IMAGE
 import com.antigua.mytelegram.utilits.AppConstants.TYPE_MESSAGE_VOICE
