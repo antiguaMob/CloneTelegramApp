@@ -238,6 +238,10 @@
 //Урок 62. Учимся работать с plurals и quantity.
 //https://www.youtube.com/watch?v=nstNmY0Zjy8&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=4
 
+//Урок 63. Реализация групп.
+//https://www.youtube.com/watch?v=w6bORaTUco4&list=PLY8G5DMG6TiOBq7OWFPWF2Um3FRB5s2ke&index=3
+
+
 
 
 
