@@ -7,7 +7,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.antigua.mytelegram.R
 import com.antigua.mytelegram.models.CommonModel
+import com.antigua.mytelegram.ui.screens.groups.GroupChatFragment
 import com.antigua.mytelegram.ui.screens.single_chat.SingleChatFragment
+import com.antigua.mytelegram.utilits.AppConstants.TYPE_CHAT
+import com.antigua.mytelegram.utilits.AppConstants.TYPE_GROUP
 import com.antigua.mytelegram.utilits.downloadAndSetImage
 import com.antigua.mytelegram.utilits.replaceFragment
 import de.hdodenhof.circleimageview.CircleImageView
@@ -27,10 +30,12 @@ class MainListAdapter: RecyclerView.Adapter<MainListAdapter.MainListHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainListHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.main_list_item,parent,false)
         val holder = MainListHolder(view)
-        holder.itemView.setOnClickListener{
-            replaceFragment(SingleChatFragment(listItems[holder.adapterPosition]))
+        holder.itemView.setOnClickListener {
+            when (listItems[holder.absoluteAdapterPosition].type) {
+                TYPE_CHAT -> replaceFragment(SingleChatFragment(listItems[holder.adapterPosition]))
+                TYPE_GROUP -> replaceFragment(GroupChatFragment(listItems[holder.adapterPosition]))
+            }
         }
-
         return holder
     }
 
